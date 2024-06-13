@@ -154,8 +154,8 @@ footer {
     color: #ffdd57;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
     width: 100%;
+    position: relative; /* Thay đổi từ fixed sang relative */
     bottom: 0;
 }
 
@@ -172,6 +172,8 @@ footer {
         display: none;
         flex-direction: column;
         align-items: center;
+        max-height: 80vh; /* Giới hạn chiều cao tối đa của menu */
+        overflow-y: auto; /* Thêm thanh cuộn dọc nếu cần */
     }
 
     nav ul.open {
