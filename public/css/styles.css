@@ -61,12 +61,13 @@ header nav ul li a {
 
 .hero-text {
     position: absolute;
-    top: 50%;
+    top: 10%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -10%);
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
+    width: 80%;
 }
 
 .hero h1 {
@@ -99,6 +100,12 @@ header nav ul li a {
 .feature {
     width: 30%;
     text-align: center;
+}
+
+.feature img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 .feature h2 {
