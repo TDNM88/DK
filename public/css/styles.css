@@ -67,7 +67,8 @@ header nav ul li a {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
-    width: 80%;
+    width: auto; /* Đặt chiều rộng tự động */
+    max-width: 400px; /* Giới hạn chiều rộng tối đa */
     text-align: left; /* Căn lề trái */
 }
 
