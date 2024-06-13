@@ -1,15 +1,15 @@
 {
-    "name": "my-cleaning-services",
-    "version": "1.0.0",
-    "description": "A website for My Cleaning Services",
-    "main": "index.js",
-    "scripts": {
-      "build": "echo 'No build step required'",
-      "start": "live-server public"
-    },
-    "author": "Your Name",
-    "license": "MIT",
-    "devDependencies": {
-      "live-server": "^1.2.1"
-    }
+  "name": "dk-cleaning-services",
+  "version": "1.0.0",
+  "description": "A website for DK Cleaning Services",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'No build step required'",
+    "start": "live-server public"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.1"
   }
+}

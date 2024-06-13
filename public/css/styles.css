@@ -9,6 +9,25 @@ body {
 header {
     background-color: #ffdd57;
     padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
 }
 
 header nav ul {
@@ -16,7 +35,6 @@ header nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
 }
 
 header nav ul li {
@@ -30,10 +48,25 @@ header nav ul li a {
 }
 
 .hero {
-    background-color: #ffdd57;
-    color: #333;
+    position: relative;
     text-align: center;
-    padding: 50px 20px;
+    color: white;
+    margin-top: 60px;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .hero h1 {
@@ -60,6 +93,7 @@ header nav ul li a {
     justify-content: space-around;
     padding: 20px;
     background-color: #fff;
+    margin-top: 20px;
 }
 
 .feature {
@@ -69,7 +103,7 @@ header nav ul li a {
 
 .feature h2 {
     font-size: 1.5em;
-    margin: 0 0 10px;
+    margin: 10px 0;
 }
 
 .feature p {
@@ -85,43 +119,6 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
-}
-
-.blog {
-    padding: 20px;
-    background-color: #fff;
-}
-
-.blog h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.blog-post {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-.blog-post h2 {
-    margin-top: 0;
-}
-
-.blog-post p {
-    margin: 5px 0;
-}
-
-.read-more {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #ffdd57;
-    color: #333;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
 }
 
 /* Mobile Navigation */

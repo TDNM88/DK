@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Example function to toggle mobile navigation menu (if applicable)
+    // Toggle mobile navigation menu
     const menuToggle = document.querySelector('#menuToggle');
     const navMenu = document.querySelector('nav ul');
 
@@ -38,4 +38,31 @@ document.addEventListener('DOMContentLoaded', function() {
             navMenu.classList.toggle('open');
         });
     }
+
+    // Add scroll effect to header
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Lazy load images
+    const lazyImages = document.querySelectorAll('img.lazy');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                observer.unobserve(img);
+            }
+        });
+    });
+
+    lazyImages.forEach(image => {
+        imageObserver.observe(image);
+    });
 });
