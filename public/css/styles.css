@@ -180,6 +180,27 @@ footer {
         display: flex;
     }
 
+    /* Mobile Navigation */
+#menuToggle {
+    display: none;
+    cursor: pointer;
+    font-size: 2em;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        max-height: 80vh; /* Giới hạn chiều cao tối đa của menu */
+        overflow-y: auto; /* Thêm thanh cuộn dọc nếu cần */
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
     #menuToggle {
         display: block;
     }
