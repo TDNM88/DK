@@ -62,12 +62,13 @@ header nav ul li a {
 .hero-text {
     position: absolute;
     top: 10%;
-    left: 50%;
-    transform: translate(-50%, -10%);
+    left: 0;
+    transform: translate(0, -10%);
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
     width: 80%;
+    text-align: left; /* Căn lề trái */
 }
 
 .hero h1 {
