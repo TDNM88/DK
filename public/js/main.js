@@ -3,7 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('nav ul li a');
     
     for (const link of navLinks) {
-        link.addEventListener('click', smoothScroll);
+        link.addEventListener('click', function(event) {
+            if (link.getAttribute('href').startsWith('#')) {
+                event.preventDefault();
+                smoothScroll(event);
+            }
+        });
     }
 
     function smoothScroll(event) {
