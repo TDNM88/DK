@@ -136,6 +136,31 @@ header {
     background-color: #e6b800;
 }
 
+
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0;
+    background-color: #f9f9f9;
+}
+
+.feature {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 1rem;
+    text-align: center;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 /* CSS to ensure images fit within their containers */
 .feature img {
     width: 100%;
@@ -145,57 +170,52 @@ header {
     margin: 0 auto;
 }
 
-/* CSS for better bullet point styling */
-.features ul {
-    list-style: none; /* Remove default bullet points */
-    padding-left: 0;  /* Remove default padding */
-}
-
-.features ul li {
-    position: relative;
-    padding-left: 25px; /* Space for custom bullet */
-    margin-bottom: 10px; /* Space between list items */
-    font-size: 16px; /* Increase font size for readability */
-}
-
-.features ul li::before {
-    content: '\2022'; /* Unicode bullet character */
-    position: absolute;
-    left: 0;
-    color: #FFD700; /* Customize bullet color to yellow */
-    font-size: 20px; /* Customize bullet size */
-    line-height: 1.2;
-}
-
-/* 3D card styling for feature sections */
-.feature {
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 20px;
-    margin: 20px 0;
-    overflow: hidden; /* Ensures content doesn't overflow the card */
-}
-
-.feature:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.feature img {
-    border-radius: 15px 15px 0 0;
-}
-
-/* Heading and paragraph styling within feature cards */
 .feature h2 {
-    font-size: 24px;
-    margin-top: 10px;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #333;
 }
 
 .feature p {
-    font-size: 16px;
-    color: #555;
+    font-size: 1rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* 3D Effect for Lists */
+.feature ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.feature ul li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #333;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature ul li::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #ffc107;
+    border-radius: 50%;
 }
 
 
