@@ -23,6 +23,18 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(img);
     });
 
+    // Hiển thị hiệu ứng chào mừng
+    const welcomeMessage = document.querySelector('.welcome-message');
+    welcomeMessage.style.opacity = '1';
+
+    // Kiểm tra xem thiết bị di động
+    if (window.innerWidth <= 768) {
+        welcomeMessage.classList.add('show');
+        setTimeout(() => {
+            welcomeMessage.classList.remove('show');
+        }, 3000);
+    }
+
     // Kiểm tra xem đã có lần truy cập trước đó hay chưa
     if (!localStorage.getItem('firstVisit')) {
         // Hiển thị pop-up chào mừng
@@ -31,10 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Đánh dấu lần truy cập đầu tiên
         localStorage.setItem('firstVisit', 'true');
     }
-
-    // Hiển thị hiệu ứng chào mừng
-    const welcomeMessage = document.querySelector('.welcome-message');
-    welcomeMessage.style.opacity = '1';
 });
 
 const navLinks = document.querySelector('.nav-links');
