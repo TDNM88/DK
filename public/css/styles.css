@@ -65,6 +65,11 @@ header {
     color: white;
 }
 
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
 .hero::after {
     content: '';
     position: absolute;
