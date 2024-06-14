@@ -185,10 +185,9 @@ header {
 }
 
 /* Footer Styles */
-/* footer.css */
 footer {
-    background-color: #0a1a4f;
-    color: white;
+    background-color: #ffcc00;
+    color: #555;
     padding: 20px 0;
 }
 
