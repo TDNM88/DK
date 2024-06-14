@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-* Overlay Styles */
+/* Overlay Styles */
 .overlay {
     position: fixed; /* Đặt overlay ở vị trí cố định */
     top: 0;
