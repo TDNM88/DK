@@ -31,6 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Đánh dấu lần truy cập đầu tiên
         localStorage.setItem('firstVisit', 'true');
     }
+
+    // Hiển thị hiệu ứng chào mừng
+    const welcomeMessage = document.querySelector('.welcome-message');
+    welcomeMessage.style.opacity = '1';
 });
 
 const navLinks = document.querySelector('.nav-links');
