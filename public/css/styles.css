@@ -29,6 +29,7 @@ body {
 header {
     background-color: #ffcc00;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 0.5rem 1rem;
 }
 
 /* Navigation Bar */
@@ -37,14 +38,17 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #333;
+    background-color: #efbf23;
     color: #fff;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
+    transition: transform 0.3s ease-in-out;
+    /* transform: translateY(-100%); Remove this line */
+}
+
+.nav-links.show {
+    transform: translateY(0);
 }
 
 .nav-links li {
@@ -66,22 +70,29 @@ header {
     border-radius: 5px;
 }
 
-hero {
-    position: relative;
-    text-align: center;
-    padding: 4rem 2rem;
-    background: #fff;
-    color: white;
-    max-width: 100%; /* Đảm bảo phần tử không vượt quá kích thước của phần tử chứa */
-    overflow: hidden; /* Ẩn phần ảnh bị tràn ra ngoài */
+.hero {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Create a new stacking context for the image and pseudo-elements */
+    overflow: hidden; /* Ensure the image and pseudo-elements don't spill out */
+}
+
+.hero::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; /* 100 / (16 / 9) */
 }
 
 .hero img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
-    max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước của phần tử chứa */
-    object-fit: contain; /* Đảm bảo ảnh hiển thị đầy đủ bên trong phần tử chứa */
+    object-fit: cover;
+    position: absolute; /* Take it out of the normal flow and position it at the top left of the .hero */
+    top: 0;
+    left: 0;
 }
 
 .hero::after {
@@ -141,17 +152,17 @@ hero {
 .features {
     display: flex;
     justify-content: space-around;
-    padding: 2rem 0;
-    background-color: #f9f9f9;
+    padding: 1rem 0;
+    background-color: #ffcc00;
 }
 
 .feature {
-    background: #fff;
+    background: #4f97bbba;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: center;
 }
 
@@ -204,17 +215,7 @@ hero {
     color: #fff; /* White text color on hover */
 }
 
-.feature ul li::before {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
-    background-color: #ffc107; /* Yellow bullet point */
-    border-radius: 50%;
-}
+/* Remove the empty ruleset */
 
 /* Content Section Styles */
 .content {
@@ -298,4 +299,67 @@ footer {
 
 .footer-legal p {
     margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.show {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-links a {
+        /* Add your styles for the navigation icons here */
+    }
+}
+
+    .hamburger {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        /* Adjust the size of the header here */
+    }
+
+    .navbar {
+        flex-direction: column;
+        /* Adjust the size of the navbar here */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        /* Adjust the size of the nav links here */
+    }
+
+    .nav-links a {
+        padding: 0.5rem 0;
+        /* Adjust the size of the nav links here */
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+    }
 }
