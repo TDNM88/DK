@@ -31,40 +31,46 @@ header {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-}
-
-#menuToggle {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: #fff;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 0.5rem;
-    text-size-adjust: auto;
+    gap: 1rem;
+}
+
+.nav-links li {
+    position: relative;
 }
 
 .nav-links a {
+    color: #fff;
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s;
+    padding: 0.5rem 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .nav-links a:hover {
-    color: #555;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #ffc107; /* Yellow background on hover */
+    color: #333; /* Dark text color on hover */
+    border-radius: 5px;
+}
+
+
+#menuToggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .hero {
