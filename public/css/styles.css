@@ -136,28 +136,13 @@ header {
     background-color: #e6b800;
 }
 
-/* Features Section Styles */
-.features {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    background: #fff;
-    padding: 2rem;
-}
-
-.feature {
-    background: #ffcc00;
-    padding: 1rem;
-    border-radius: 5px;
-    margin: 1rem;
-    flex: 1;
-    min-width: 200px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.feature:hover {
-    transform: translateY(-10px);
+/* CSS to ensure images fit within their containers */
+.feature img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensures the image fits within the container without being cut off */
+    display: block;
+    margin: 0 auto;
 }
 
 /* CSS for better bullet point styling */
@@ -177,19 +162,40 @@ header {
     content: '\2022'; /* Unicode bullet character */
     position: absolute;
     left: 0;
-    color: #007BFF; /* Customize bullet color */
+    color: #FFD700; /* Customize bullet color to yellow */
     font-size: 20px; /* Customize bullet size */
     line-height: 1.2;
 }
 
+/* 3D card styling for feature sections */
+.feature {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    margin: 20px 0;
+    overflow: hidden; /* Ensures content doesn't overflow the card */
+}
 
-/* CSS to ensure images fit within their containers */
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 .feature img {
-    width: 100%;
-    height: auto;
-    object-fit: contain; /* Ensures the image fits within the container without being cut off */
-    display: block;
-    margin: 0 auto;
+    border-radius: 15px 15px 0 0;
+}
+
+/* Heading and paragraph styling within feature cards */
+.feature h2 {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #555;
 }
 
 
