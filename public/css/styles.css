@@ -60,7 +60,7 @@ header {
     padding: 4rem 2rem;
     background: #fff;
     background-image: url('images/hero.jpg');
-    background-size: cover;
+    background-size: cover; /* Đặt kích thước hình ảnh nền để bao phủ toàn bộ phần tử */
     background-position: center;
     color: white;
 }
