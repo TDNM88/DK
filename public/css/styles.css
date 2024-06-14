@@ -160,12 +160,38 @@ header {
     transform: translateY(-10px);
 }
 
-.feature img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 1rem;
+/* CSS for better bullet point styling */
+.features ul {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0;  /* Remove default padding */
 }
+
+.features ul li {
+    position: relative;
+    padding-left: 25px; /* Space for custom bullet */
+    margin-bottom: 10px; /* Space between list items */
+    font-size: 16px; /* Increase font size for readability */
+}
+
+.features ul li::before {
+    content: '\2022'; /* Unicode bullet character */
+    position: absolute;
+    left: 0;
+    color: #007BFF; /* Customize bullet color */
+    font-size: 20px; /* Customize bullet size */
+    line-height: 1.2;
+}
+
+
+/* CSS to ensure images fit within their containers */
+.feature img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensures the image fits within the container without being cut off */
+    display: block;
+    margin: 0 auto;
+}
+
 
 /* Content Section Styles */
 .content {
