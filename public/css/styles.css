@@ -60,14 +60,9 @@ header {
     padding: 4rem 2rem;
     background: #fff;
     background-image: url('images/hero.jpg');
-    background-size: cover; /* Đặt kích thước hình ảnh nền để bao phủ toàn bộ phần tử */
+    background-size: cover;
     background-position: center;
     color: white;
-}
-
-.hero-image {
-    width: 100%;
-    height: auto;
 }
 
 .hero::after {
@@ -77,32 +72,34 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
-.hero h1 {
+.hero h1,
+.hero p,
+.hero form {
     position: relative;
     z-index: 2;
+}
+
+.hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
 .hero p {
-    position: relative;
-    z-index: 2;
     margin-bottom: 2rem;
 }
 
 .hero form {
-    position: relative;
-    z-index: 2;
     display: flex;
     justify-content: center;
     gap: 1rem;
 }
 
-.hero input, .hero button {
+.hero input,
+.hero button {
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -127,11 +124,6 @@ header {
     justify-content: space-around;
     flex-wrap: wrap;
     background: #fff;
-    background: #fff;
-    background-image: url('images/osto.png');
-    background-size: cover; /* Đặt kích thước hình ảnh nền để bao phủ toàn bộ phần tử */
-    background-position: center;
-    color: white;
     padding: 2rem;
 }
 
@@ -142,6 +134,7 @@ header {
     margin: 1rem;
     flex: 1;
     min-width: 200px;
+    max-width: 300px;
     text-align: center;
     transition: transform 0.3s;
 }
@@ -151,7 +144,7 @@ header {
 }
 
 .feature img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     border-radius: 5px;
     margin-bottom: 1rem;
@@ -197,6 +190,52 @@ footer {
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
 }
 
+.footer-top {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.payment-methods img,
+.app-download img {
+    width: 150px;
+    height: 50px;
+    margin: 5px;
+}
+
+.social-media a {
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-info,
+.footer-links,
+.footer-legal {
+    margin-bottom: 10px;
+}
+
+.footer-legal p {
+    margin: 0;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
     .navbar .nav-links {
@@ -223,5 +262,9 @@ footer {
     .features {
         flex-direction: column;
         align-items: center;
+    }
+
+    .feature {
+        max-width: 90%;
     }
 }
