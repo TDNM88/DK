@@ -72,30 +72,31 @@ header {
 
 /* Existing CSS rules */
 
+/* Existing CSS rules */
+
 /* Hero section styling */
 .hero {
     position: relative;
     height: 100vh;
-    background: url('../images/hero-bg.jpg') no-repeat center center/cover;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    justify-content: flex-start; /* Align items to the left */
     overflow: hidden;
 }
 
 /* Welcome message styling */
 .welcome-message {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 10px; /* Sát cạnh trên */
+    left: 10px; /* Sát lề trái */
     background: rgba(0, 0, 0, 0.5); /* Nền đèn mờ */
     color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
     z-index: 10;
     opacity: 0;
+    font-size: 1rem; /* Cỡ chữ nhỏ hơn */
     animation: fadeIn 2s forwards, slideUp 1s forwards 2s;
 }
 
@@ -107,12 +108,13 @@ header {
 
 @keyframes slideUp {
     from {
-        transform: translate(-50%, -60%);
+        transform: translateY(-20px);
     }
     to {
-        transform: translate(-50%, -50%);
+        transform: translateY(0);
     }
 }
+
 .hero::before {
     content: "";
     display: block;
