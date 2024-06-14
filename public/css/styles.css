@@ -70,15 +70,49 @@ header {
     border-radius: 5px;
 }
 
+/* Existing CSS rules */
+
+/* Hero section styling */
 .hero {
-    width: 100%;
+    position: relative;
+    height: 100vh;
+    background: url('../images/hero-bg.jpg') no-repeat center center/cover;
     display: flex;
-    justify-content: center;
     align-items: center;
-    position: relative; /* Create a new stacking context for the image and pseudo-elements */
-    overflow: hidden; /* Ensure the image and pseudo-elements don't spill out */
+    justify-content: center;
+    overflow: hidden;
 }
 
+/* Welcome message styling */
+.welcome-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5); /* Nền đèn mờ */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 10;
+    opacity: 0;
+    animation: fadeIn 2s forwards, slideUp 1s forwards 2s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, -60%);
+    }
+    to {
+        transform: translate(-50%, -50%);
+    }
+}
 .hero::before {
     content: "";
     display: block;
