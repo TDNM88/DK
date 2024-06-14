@@ -20,7 +20,9 @@
 body {
     font-family: 'Arial', sans-serif;
     color: #333;
-    background-color: #f4f4f4;
+    background-color: transparent; /* Đặt màu nền của body thành trong suốt */
+    position: relative; /* Đảm bảo các phần tử khác nằm dưới overlay */
+    z-index: 1;
 }
 
 /* Header Styles */
