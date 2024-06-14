@@ -63,6 +63,8 @@ header {
     background-size: cover; /* Đặt kích thước hình ảnh nền để bao phủ toàn bộ phần tử */
     background-position: center;
     color: white;
+    max-width: 100%; /* Đảm bảo phần tử không vượt quá kích thước của phần tử chứa */
+    overflow: hidden; /* Ẩn phần ảnh bị tràn ra ngoài */
 }
 
 .hero::after {
