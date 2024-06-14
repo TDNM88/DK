@@ -1,62 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('nav ul li a');
-    
-    for (const link of navLinks) {
-        link.addEventListener('click', function(event) {
-            if (link.getAttribute('href').startsWith('#')) {
-                event.preventDefault();
-                smoothScroll(event);
-            }
-        });
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
 
-    function smoothScroll(event) {
-        event.preventDefault();
-        const targetId = event.currentTarget.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-
-        if (targetSection) {
-            window.scrollTo({
-                top: targetSection.offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    }
-
-    // Example function to handle form submissions (if any)
-    const contactForm = document.querySelector('#contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Handle form submission logic here
-            alert('Form submitted!');
-        });
-    }
-
-    // Toggle mobile navigation menu
-    const menuToggle = document.querySelector('#menuToggle');
-    const navMenu = document.querySelector('nav ul');
-
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('open');
-        });
-    }
-
-    // Add scroll effect to header
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
     });
 
-    // Lazy load images
-    const lazyImages = document.querySelectorAll('img.lazy');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
+    // Lazy loading for images
+    const lazyImages = document.querySelectorAll('.lazy');
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
@@ -65,9 +17,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 observer.unobserve(img);
             }
         });
+    }, { rootMargin: '0px 0px 50px 0px' });
+
+    lazyImages.forEach(img => {
+        observer.observe(img);
     });
 
-    lazyImages.forEach(image => {
-        imageObserver.observe(image);
-    });
+    // Kiểm tra xem đã có lần truy cập trước đó hay chưa
+    if (!localStorage.getItem('firstVisit')) {
+        // Hiển thị pop-up chào mừng
+        alert('Welcome to DUST KILLER! Your go-to solution for home and office cleaning services.');
+
+        // Đánh dấu lần truy cập đầu tiên
+        localStorage.setItem('firstVisit', 'true');
+    }
 });
