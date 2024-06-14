@@ -66,14 +66,7 @@ header {
     border-radius: 5px;
 }
 
-
-#menuToggle {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.hero {
+hero {
     position: relative;
     text-align: center;
     padding: 4rem 2rem;
