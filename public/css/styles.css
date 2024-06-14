@@ -53,18 +53,22 @@ header {
     color: #555;
 }
 
-/* Hero Section Styles */
 .hero {
     position: relative;
     text-align: center;
     padding: 4rem 2rem;
     background: #fff;
-    background-image: url('images/hero.jpg');
-    background-size: cover; /* Đặt kích thước hình ảnh nền để bao phủ toàn bộ phần tử */
-    background-position: center;
     color: white;
     max-width: 100%; /* Đảm bảo phần tử không vượt quá kích thước của phần tử chứa */
     overflow: hidden; /* Ẩn phần ảnh bị tràn ra ngoài */
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước của phần tử chứa */
+    object-fit: contain; /* Đảm bảo ảnh hiển thị đầy đủ bên trong phần tử chứa */
 }
 
 .hero::after {
