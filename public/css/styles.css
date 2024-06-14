@@ -72,8 +72,6 @@ header {
 
 /* Existing CSS rules */
 
-/* Existing CSS rules */
-
 /* Hero section styling */
 .hero {
     position: relative;
@@ -96,7 +94,7 @@ header {
     text-align: left;
     z-index: 10;
     opacity: 0;
-    font-size: 1rem; /* Cỡ chữ nhỏ hơn */
+    font-size: 0.8rem; /* Cỡ chữ nhỏ hơn 20% */
     animation: fadeIn 2s forwards, slideUp 1s forwards 2s;
 }
 
@@ -112,6 +110,23 @@ header {
     }
     to {
         transform: translateY(0);
+    }
+}
+
+/* Mobile specific styling for welcome message */
+@media (max-width: 768px) {
+    .welcome-message {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.8); /* Nền đèn mờ hơn cho mobile */
+        padding: 20px;
+        width: 90%;
+        text-align: center;
+        font-size: 1rem; /* Cỡ chữ lớn hơn cho mobile */
+        z-index: 1000;
+        border-radius: 10px;
     }
 }
 
