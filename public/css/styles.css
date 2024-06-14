@@ -53,7 +53,7 @@ header {
     list-style: none;
     display: flex;
     gap: 0.5rem;
-    ext-size-adjust: auto;
+    text-size-adjust: auto;
 }
 
 .nav-links a {
