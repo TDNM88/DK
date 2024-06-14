@@ -161,13 +161,10 @@ header {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* CSS to ensure images fit within their containers */
 .feature img {
     width: 100%;
     height: auto;
-    object-fit: contain; /* Ensures the image fits within the container without being cut off */
-    display: block;
-    margin: 0 auto;
+    object-fit: cover;
 }
 
 .feature h2 {
@@ -198,12 +195,14 @@ header {
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 1rem;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
 }
 
 .feature ul li:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #ffc107; /* Yellow background on hover */
+    color: #fff; /* White text color on hover */
 }
 
 .feature ul li::before {
@@ -214,10 +213,9 @@ header {
     transform: translateY(-50%);
     width: 10px;
     height: 10px;
-    background-color: #ffc107;
+    background-color: #ffc107; /* Yellow bullet point */
     border-radius: 50%;
 }
-
 
 /* Content Section Styles */
 .content {
