@@ -23,11 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(img);
     });
 
-    // Hiển thị scene chào mừng và chuyển đổi sau 3 giây
+    // Hiển thị scene chào mừng và chuyển đổi sau 1.5 giây và 5 giây
     const welcomeScene = document.getElementById('welcome-scene');
     setTimeout(() => {
+        welcomeScene.classList.remove('yellow-screen');
+        welcomeScene.classList.add('show-image');
+    }, 1500);
+
+    setTimeout(() => {
         welcomeScene.classList.add('hidden');
-    }, 3000);
+    }, 6500); // 1.5 giây cho hiệu ứng đầu và 5 giây cho hình welcome
 
     // Kiểm tra xem đã có lần truy cập trước đó hay chưa
     if (!localStorage.getItem('firstVisit')) {
