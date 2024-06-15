@@ -438,23 +438,14 @@ footer {
     visibility: visible;
 }
 
-.welcome-scene.yellow-screen {
-    background-color: yellow;
-}
-
-.welcome-scene img {
-    display: none;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.welcome-scene.show-image img {
-    display: block;
-}
-
 .welcome-scene.hidden {
     opacity: 0;
     visibility: hidden;
+}
+
+.welcome-scene img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .desktop-only {
