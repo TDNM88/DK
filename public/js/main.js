@@ -1,14 +1,53 @@
-// Wait until the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the close button element by its ID
-    var closeButton = document.getElementById('close-button');
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+    const welcomeScene = document.getElementById('welcome-scene');
+    const closeWelcomeButton = document.getElementById('close-welcome');
 
-    // Add a click event listener to the close button
-    closeButton.addEventListener('click', function() {
-        // Get the welcome message element by its ID
-        var welcomeMessage = document.getElementById('welcome-message');
-
-        // Set the display style of the welcome message to 'none' to hide it
-        welcomeMessage.style.display = 'none';
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
     });
+
+    // Lazy loading for images
+    const lazyImages = document.querySelectorAll('.lazy');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                observer.unobserve(img);
+            }
+        });
+    }, { rootMargin: '0px 0px 50px 0px' });
+
+    lazyImages.forEach(img => {
+        observer.observe(img);
+    });
+
+    // Hiển thị scene chào mừng và chuyển đổi sau 3 giây
+    setTimeout(() => {
+        welcomeScene.classList.add('hidden');
+    }, 3000);
+
+    // Sự kiện khi người dùng nhấn nút "Close"
+    closeWelcomeButton.addEventListener('click', () => {
+        welcomeScene.classList.add('hidden');
+    });
+
+    // Kiểm tra xem đã có lần truy cập trước đó hay chưa
+    if (!localStorage.getItem('firstVisit')) {
+        // Hiển thị pop-up chào mừng
+        alert('Welcome to DUST KILLER! Your go-to solution for home and office cleaning services.');
+
+        // Đánh dấu lần truy cập đầu tiên
+        localStorage.setItem('firstVisit', 'true');
+    }
+});
+
+const navLinks = document.querySelector('.nav-links');
+const hamburger = document.querySelector('.hamburger');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
 });
