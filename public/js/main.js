@@ -23,17 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(img);
     });
 
-    // Hiển thị hiệu ứng chào mừng
-    const welcomeMessage = document.querySelector('.welcome-message');
-    welcomeMessage.style.opacity = '1';
-
-    // Kiểm tra xem thiết bị di động
-    if (window.innerWidth <= 768) {
-        welcomeMessage.classList.add('show');
-        setTimeout(() => {
-            welcomeMessage.classList.remove('show');
-        }, 3000);
-    }
+    // Hiển thị scene chào mừng và chuyển đổi sau 3 giây
+    const welcomeScene = document.getElementById('welcome-scene');
+    setTimeout(() => {
+        welcomeScene.classList.add('hidden');
+    }, 3000);
 
     // Kiểm tra xem đã có lần truy cập trước đó hay chưa
     if (!localStorage.getItem('firstVisit')) {
