@@ -429,7 +429,6 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: yellow;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -439,15 +438,23 @@ footer {
     visibility: visible;
 }
 
+.welcome-scene.yellow-screen {
+    background-color: yellow;
+}
+
+.welcome-scene img {
+    display: none;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.welcome-scene.show-image img {
+    display: block;
+}
+
 .welcome-scene.hidden {
     opacity: 0;
     visibility: hidden;
-}
-
-.welcome-content {
-    text-align: center;
-    color: black;
-    font-size: 2rem;
 }
 
 .desktop-only {
