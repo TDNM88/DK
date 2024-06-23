@@ -3,37 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tax Deduction - My Cleaning Services</title>
+    <title>Tax Deduction - DUST KILLER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        header {
+            background-color: #ffcc00;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1rem;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #ffcc00;
+        }
+
+        .content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .content p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .content ul li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .section-bg {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-bg .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background: linear-gradient(145deg, #ffcc00, #ff9900);
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #444;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section {
+            margin: 1rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-methods i,
+        .app-download i {
+            font-size: 2rem;
+            margin: 0.5rem;
+        }
+
+        .social-media a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #ffcc00;
+        }
+
+        .footer-bottom {
+            margin-top: 1rem;
+        }
+
+        .footer-info,
+        .footer-links,
+        .footer-legal {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links p,
+        .footer-legal p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .typing span {
+            display: inline-block;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .typing span.visible {
+            opacity: 1;
+        }
+
+        .typing {
+            border-right: 0.15em solid orange;
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: orange; }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="prices.html">Prices</a></li>
-                <li><a href="tax-deduction.html">Tax Deduction</a></li>
-                <li><a href="come-work-with-us.html">Come Work with Us</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="all-services.html">All Services</a></li>
-                <li><a href="about-dust-killer.html">About Dust Killer</a></li>
+        <nav class="navbar">
+            <a href="#" class="logo">Dust Killer</a>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/index.html"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="/about-dust-killer.html"><i class="fas fa-info-circle"></i> ABOUT US</a></li>
+                <li><a href="/all-services.html"><i class="fas fa-users"></i> SERVICES</a></li>
+                <li><a href="/prices.html"><i class="fas fa-dollar-sign"></i> PRICES</a></li>
+                <li><a href="/tax-deduction.html"><i class="fas fa-landmark"></i> TAX DEDUCTION</a></li>
+                <li><a href="/come-work-with-us.html"><i class="fas fa-user-plus"></i> JOIN US</a></li>
+                <li><a href="/blog.html"><i class="fas fa-blog"></i> BLOG</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1>Tax Deduction</h1>
-        <section class="tax-info">
-            <p>Learn how to deduct cleaning service expenses from your taxes.</p>
-            <h2>Eligibility</h2>
-            <p>Individuals who use our services for home cleaning can be eligible for tax deductions.</p>
-            <h2>How to Apply</h2>
-            <p>Contact your tax advisor or visit the official tax authority website for more information.</p>
+        <section class="section-bg" style="background-image: url('/images/tax.jpg');">
+            <div class="content">
+                <h1>Tax Credit for Dust War Expenses</h1>
+                <p>Greetings, brave warriors of Uusimaa! Fantastic news from the Dust Killer team: the Ministry of Cleanliness will cover 60% of your cleaning costs! That’s right, you only pay 40% while the Ministry backs you up in our epic battle against dirt and grime.</p>
+            </div>
+        </section>
+        <section class="section-bg" style="background-image: url('/images/1.png');">
+            <div class="content">
+                <h2>How It Works:</h2>
+                <p>When you enlist our heroic cleaning services, the Ministry of Cleanliness steps in to cover 60% of the expenses. This means you save big while keeping your home spotless!</p>
+                <h2>Details:</h2>
+                <ul>
+                    <li>Maximum Credit: 3,500 € per person, 7,000 € for couples.</li>
+                    <li>Threshold: 100 € per person annually.</li>
+                    <li>Eligible Services: Home, holiday apartment cleaning, and cleaning for parents' or grandparents' homes.</li>
+                </ul>
+            </div>
+        </section>
+        <section class="section-bg" style="background-image: url('/images/2.png');">
+            <div class="content">
+                <h2>Claiming is Easy:</h2>
+                <ul>
+                    <li>Order our cleaning services and join the Dust Killer crusade.</li>
+                    <li>Enjoy your spotless home while Otso and the team take care of the grime.</li>
+                    <li>Claim your 60% tax credit.</li>
+                </ul>
+            </div>
+        </section>
+        <section class="section-bg" style="background-image: url('/images/3.png');">
+            <div class="content">
+                <p>Join Otso and the Dust Killer team in this epic battle against dirt and grime. Save money and keep your home a fortress of cleanliness, with 60% of the cost covered by the Ministry of Cleanliness! Together, we will conquer and shine!</p>
+            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 My Cleaning Services</p>
+        <div class="footer-top">
+            <div class="footer-section fade-in-element">
+                <h3>Payment methods</h3>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+            <div class="footer-section fade-in-element">
+                <h3>Download the app</h3>
+                <div class="app-download">
+                    <i class="fab fa-google-play"></i>
+                    <i class="fab fa-apple"></i>
+                </div>
+            </div>
+            <div class="footer-section fade-in-element">
+                <h4>Dust Killer in social media</h4>
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom fade-in-element">
+            <div class="footer-info">
+                <h3><p>Dust Killer Finland</p></h3>
+                <p>Business ID: xxxxxx-x</p>
+            </div>
+            <div class="footer-links">
+                <h4></h4><p>Home · Window · Moving · Office</p>
+                <p>CLEANING</p></h4>
+            </div>
+            <div class="footer-legal">
+                <p>Whistleblowing · Terms and conditions · Privacy policy · Cookie preferences</p>
+            </div>
+        </div>
     </footer>
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const headingElements = document.querySelectorAll('.content h1, .content h2');
+
+            headingElements.forEach(headingElement => {
+                headingElement.addEventListener('mouseover', function () {
+                    if (!headingElement.classList.contains('typing')) {
+                        const text = headingElement.innerText;
+                        const characters = text.split('');
+                        headingElement.innerHTML = '';
+                        headingElement.classList.add('typing');
+
+                        characters.forEach((char, index) => {
+                            const span = document.createElement('span');
+                            span.innerHTML = char === ' ' ? '&nbsp;' : char;
+                            headingElement.appendChild(span);
+
+                            setTimeout(() => {
+                                span.classList.add('visible');
+                            }, 50 * index);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -3,50 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - My Cleaning Services</title>
+    <title>Blog - DUST KILLER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        header {
+            background-color: #ffcc00;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1rem;
+        }
+
+        
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #ffcc00;
+        }
+
+        .content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .content p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .content ul li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .blog-post {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .blog-post h2 {
+            font-size: 2rem;
+            margin-top: 1rem;
+            color: #333;
+        }
+
+        .blog-post p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #444;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section {
+            margin: 1rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-methods i,
+        .app-download i {
+            font-size: 2rem;
+            margin: 0.5rem;
+        }
+
+        .social-media a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #ffcc00;
+        }
+
+        .footer-bottom {
+            margin-top: 1rem;
+        }
+
+        .footer-info,
+        .footer-links,
+        .footer-legal {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links p,
+        .footer-legal p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="prices.html">Prices</a></li>
-                <li><a href="tax-deduction.html">Tax Deduction</a></li>
-                <li><a href="come-work-with-us.html">Come Work with Us</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="all-services.html">All Services</a></li>
-                <li><a href="about-dust-killer.html">About Dust Killer</a></li>
+        <nav class="navbar">
+            <a href="#" class="logo">Dust Killer</a>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/index.html"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="/about-dust-killer.html"><i class="fas fa-info-circle"></i> ABOUT US</a></li>
+                <li><a href="/all-services.html"><i class="fas fa-users"></i> SERVICES</a></li>
+                <li><a href="/prices.html"><i class="fas fa-dollar-sign"></i> PRICES</a></li>
+                <li><a href="/tax-deduction.html"><i class="fas fa-landmark"></i> TAX DEDUCTION</a></li>
+                <li><a href="/come-work-with-us.html"><i class="fas fa-user-plus"></i> JOIN US</a></li>
+                <li><a href="/blog.html"><i class="fas fa-blog"></i> BLOG</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="blog">
+        <section class="content">
             <h1>Our Blog</h1>
-            <article class="blog-post">
-                <h2>10 Tips for Keeping Your Home Clean</h2>
-                <p>Published on June 1, 2024 by Jane Doe</p>
-                <p>Keeping your home clean can be a challenge, but with these 10 tips, you'll be able to maintain a spotless home effortlessly...</p>
-                <a href="#" class="read-more">Read More</a>
-            </article>
-            <article class="blog-post">
-                <h2>Why Professional Cleaning Services are Worth It</h2>
-                <p>Published on May 20, 2024 by John Smith</p>
-                <p>Professional cleaning services can save you time and hassle. Here are the top reasons why hiring a professional cleaner is worth every penny...</p>
-                <a href="#" class="read-more">Read More</a>
-            </article>
-            <article class="blog-post">
-                <h2>Eco-Friendly Cleaning Products You Should Try</h2>
-                <p>Published on May 10, 2024 by Mary Johnson</p>
-                <p>Eco-friendly cleaning products are not only good for the environment but also for your health. Discover the best eco-friendly cleaning products on the market...</p>
-                <a href="#" class="read-more">Read More</a>
-            </article>
+
+            <div class="blog-post">
+                <img src="images/blog1.jpg" alt="Blog Post 1">
+                <h2>Cleaning Tips for a Spotless Home</h2>
+                <p>Discover the best cleaning tips and tricks to keep your home spotless. From everyday cleaning hacks to deep cleaning techniques, we’ve got you covered. Learn how to tackle tough stains, keep your kitchen sparkling, and make your bathroom shine.</p>
+            </div>
+
+            <div class="blog-post">
+                <img src="images/blog2.jpg" alt="Blog Post 2">
+                <h2>Eco-Friendly Cleaning Solutions</h2>
+                <p>Explore our eco-friendly cleaning solutions that are safe for your home and the environment. We share our favorite green cleaning products and DIY recipes for natural cleaners. Make your home a healthier place with our sustainable cleaning tips.</p>
+            </div>
+
+            <div class="blog-post">
+                <img src="images/blog3.jpg" alt="Blog Post 3">
+                <h2>How to Organize Your Home Efficiently</h2>
+                <p>Get organized with our expert tips on decluttering and organizing your home. Learn how to create a functional and stylish space with our practical advice on storage solutions, space-saving tips, and organizational hacks.</p>
+            </div>
+
+            <div class="blog-post">
+                <img src="images/blog4.jpg" alt="Blog Post 4">
+                <h2>The Importance of Regular Home Maintenance</h2>
+                <p>Regular home maintenance is key to keeping your home in top condition. We discuss the importance of routine cleaning, seasonal maintenance tasks, and how to create a home maintenance schedule that works for you.</p>
+            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 My Cleaning Services</p>
+        <div class="footer-top">
+            <div class="footer-section fade-in-element">
+                <h3>Payment methods</h3>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+            <div class="footer-section fade-in-element">
+                <h3>Download the app</h3>
+                <div class="app-download">
+                    <i class="fab fa-google-play"></i>
+                    <i class="fab fa-apple"></i>
+                </div>
+            </div>
+                        <div class="footer-section fade-in-element">
+                <h4>Dust Killer in social media</h4>
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom fade-in-element">
+            <div class="footer-info">
+                <h3><p>Dust Killer Finland</p></h3>
+                <p>Business ID: xxxxxx-x</p>
+            </div>
+            <div class="footer-links">
+                <h4></h4><p>Home · Window · Moving · Office</p>
+                <p>CLEANING</p></h4>
+            </div>
+            <div class="footer-legal">
+                <p>Whistleblowing · Terms and conditions · Privacy policy · Cookie preferences</p>
+            </div>
+        </div>
     </footer>
     <script src="js/main.js"></script>
 </body>
 </html>
+
