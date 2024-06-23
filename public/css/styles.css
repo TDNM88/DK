@@ -226,7 +226,7 @@ header {
 }
 
 .feature {
-    background: #4f97bbba;
+    background: #555555;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -353,9 +353,9 @@ footer {
 }
 
 .footer-bottom {
-    background-color: #f0f0f0;
-    color: #333;
-    padding: 20px;
+    background-color: #555555;
+    color: #fcda00;
+    padding: 10px;
     text-align: center;
 }
 
