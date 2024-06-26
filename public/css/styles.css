@@ -74,30 +74,37 @@ header {
 
 /* Hero section styling */
 .hero {
-            position: relative;
-        }
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 60vh;
+    background: url('../images/hero.jpg') no-repeat center center/cover;
+}
 
-        .hero-image {
-            width: 100%;
-            display: block;
-        }
+.hero-image {
+    width: 100%;
+    display: block;
+}
 
-        .hero-text {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
+.hero-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
 
-        .hero:hover .hero-text {
-            opacity: 1;
-        }
+.hero:hover .hero-text {
+    opacity: 1;
+}
+
 /* Homepage Features Section */
 .homepage-features {
     padding: 2rem 1rem;
