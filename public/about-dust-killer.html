@@ -17,14 +17,14 @@
 
         header {
             background-color: #ffcc00;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             padding: 1rem;
         }
 
         .hero {
             position: relative;
             height: 60vh;
-            background: url('images/22.png') no-repeat center center/cover;
+            background: url('images/2.png') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -74,41 +74,26 @@
         }
 
         .section-bg .hidden-content {
+            opacity: 0;
+            transition: opacity 0.5s ease;
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.5);
-            z-index: 2;
-            opacity: 0;
-            transition: opacity 0.5s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
             padding: 1rem;
             text-align: center;
+            z-index: 2;
         }
 
-        .section-bg:hover .hidden-content {
+        .section-bg .hidden-content.visible {
             opacity: 1;
         }
-
-        .hidden-content h2 {
-    font-size: 2.5rem; /* Tăng kích thước font chữ */
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Font chữ hiện đại hơn */
-    text-transform: uppercase; /* Chuyển chữ thành chữ hoa */
-    margin-bottom: 1rem;
-}
-
-.hidden-content p {
-    font-size: 1.2rem; /* Tăng kích thước font chữ cho đoạn văn */
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Font chữ hiện đại hơn */
-    line-height: 1.8; /* Tăng khoảng cách dòng */
-    margin-bottom: 1rem;
-}
-
 
         footer {
             background-color: #333;
@@ -189,14 +174,8 @@
         }
 
         @keyframes blink-caret {
-            from,
-            to {
-                border-color: transparent;
-            }
-
-            50% {
-                border-color: orange;
-            }
+            from, to { border-color: transparent; }
+            50% { border-color: orange; }
         }
     </style>
 </head>
@@ -302,27 +281,18 @@
     <script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const headingElements = document.querySelectorAll('.content h2');
+            const hiddenContents = document.querySelectorAll('.hidden-content');
 
-            headingElements.forEach(headingElement => {
-                headingElement.addEventListener('mouseover', function () {
-                    if (!headingElement.classList.contains('typing')) {
-                        const text = headingElement.innerText;
-                        const characters = text.split('');
-                        headingElement.innerHTML = '';
-                        headingElement.classList.add('typing');
-
-                        characters.forEach((char, index) => {
-                            const span = document.createElement('span');
-                            span.innerHTML = char === ' ' ? '&nbsp;' : char;
-                            headingElement.appendChild(span);
-
-                            setTimeout(() => {
-                                span.classList.add('visible');
-                            }, 50 * index);
-                        });
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
                     }
                 });
+            }, { threshold: 0.1 });
+
+            hiddenContents.forEach(content => {
+                observer.observe(content);
             });
         });
     </script>
