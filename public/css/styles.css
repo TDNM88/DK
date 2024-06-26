@@ -17,33 +17,7 @@
     pointer-events: none;
 }
 
-/* Thay đổi con trỏ chuột toàn trang */
-body {
-    cursor: url('images/cursor.png'), auto; /* Đảm bảo rằng đường dẫn đến hình ảnh con trỏ là chính xác */
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    background-color: transparent;
-    position: relative;
-    z-index: 1;
-}
-
-/* Header Styles */
-header {
-    background-color: #f8ebf1;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 0.5rem 1rem;
-}
-
-/* Navigation Bar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #549ae2;
-    color: #fff;
-}
-
+/* Navbar Styles */
 .nav-links {
     transition: transform 0.3s ease-in-out;
 }
@@ -71,43 +45,53 @@ header {
     border-radius: 5px;
 }
 
-
 /* Hero section styling */
 .hero {
-            position: relative;
-        }
-
-        .hero-image {
-            width: 100%;
-            display: block;
-        }
-
-        .hero-text {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .hero:hover .hero-text {
-            opacity: 1;
-        }
-
-/* Features Section */
-.features {
+    position: relative;
     display: flex;
-    justify-content: space-around;
-    padding: 1rem 0;
-    background-color: #ffcc00;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 60vh;
+    background: url('images/hero.jpg') no-repeat center center/cover;
 }
 
-.feature {
+.hero-image {
+    width: 100%;
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.hero:hover .hero-text {
+    opacity: 1;
+}
+
+/* Homepage Features Section */
+.homepage-features {
+    padding: 2rem 1rem;
+    background-color: #ffcc00;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.homepage-feature {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     background: #555555;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -115,88 +99,53 @@ header {
     transition: transform 0.3s, box-shadow 0.3s;
     padding: 0.5rem;
     text-align: center;
-    position: relative;
-    z-index: 2;
 }
 
-.feature:hover {
+.homepage-feature:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.feature img {
+.homepage-feature .img-led {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 50%;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.homepage-feature .img-led img {
+    border-radius: 10px;
     width: 100%;
     height: auto;
-    object-fit: cover;
 }
 
-.feature h2 {
-    margin-top: 1rem;
-    font-size: 1.5rem;
-    color: #333;
-}
-
-.feature div {
-    font-size: 1rem;
-    color: #f1ecec;
-    margin-top: 0.5rem;
-}
-
-/* 3D Effect for Lists */
-.feature ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.feature ul li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 15px;
-    font-size: 1rem;
-    color: #333;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.homepage-feature-content {
+    flex: 1;
+    max-width: 50%;
+    box-sizing: border-box;
     padding: 1rem;
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+    color: #f1ecec;
 }
 
-.feature ul li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: #ffc107;
-    color: #fff;
+.homepage-feature-content ul {
+    list-style: none;
+    padding: 0;
 }
 
-/* Content Section Styles */
-.content {
-    background: #fff;
-    padding: 2rem;
-}
-
-.content h2 {
-    text-align: center;
+.homepage-feature-content ul li {
     margin-bottom: 1rem;
-    font-size: 2rem;
 }
 
-.content p {
-    margin-bottom: 1rem;
-    line-height: 1.5;
+.homepage-feature-content ul li p {
+    margin: 0.5rem 0;
 }
 
-.content ul {
-    list-style: disc;
-    margin: 1rem 0;
-    padding-left: 2rem;
-}
-
-.content ul li {
-    margin-bottom: 0.5rem;
-}
-
-.content ul li strong {
-    color: #ffcc00;
+.cta {
+    font-size: 1.2rem;
+    color: #0371AE;
+    font-weight: bold;
 }
 
 /* Footer Styles */
@@ -294,6 +243,15 @@ footer {
     .nav-links a {
         padding: 0.5rem;
     }
+
+    .homepage-feature {
+        flex-direction: column;
+    }
+
+    .homepage-feature .img-led, .homepage-feature-content {
+        max-width: 100%;
+        padding: 0.5rem;
+    }
 }
 
 @media screen and (min-width: 769px) {
@@ -303,7 +261,7 @@ footer {
     }
 }
 
-/* Thêm hiệu ứng hover cho các button */
+/* Add hover effect for buttons */
 button {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
