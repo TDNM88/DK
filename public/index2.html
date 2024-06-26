@@ -46,17 +46,25 @@
         .features {
             padding: 2rem 1rem;
             background-color: white;
-            text-align: center;
         }
 
         .feature {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 2rem;
+            text-align: left;
         }
 
         .feature .img-led {
+            flex: 1;
             display: flex;
             justify-content: center;
             margin-bottom: 1rem;
+            max-width: 50%;
+            box-sizing: border-box;
+            padding: 1rem;
         }
 
         .feature .img-led img {
@@ -65,17 +73,23 @@
             max-width: 400px;
         }
 
-        .feature ul {
+        .feature-content {
+            flex: 1;
+            max-width: 50%;
+            box-sizing: border-box;
+            padding: 1rem;
+        }
+
+        .feature-content ul {
             list-style: none;
             padding: 0;
         }
 
-        .feature ul li {
-            text-align: left;
+        .feature-content ul li {
             margin-bottom: 1rem;
         }
 
-        .feature ul li p {
+        .feature-content ul li p {
             margin: 0.5rem 0;
         }
 
@@ -90,6 +104,18 @@
             color: white;
             padding: 1rem;
             text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .feature {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .feature .img-led, .feature-content {
+                max-width: 100%;
+                padding: 0.5rem;
+            }
         }
     </style>
 </head>
@@ -119,49 +145,51 @@
         <section class="features fade-in-element">
             <div class="feature">
                 <div class="img-led">
-                    <img src="images/f1.jpg" alt="Reliable">
+                    <img src="images/greeting.png" alt="Reliable">
                 </div>
-                <ul>
-                    <li>
-                        <p><strong>Deep Clean Sieges:</strong> I dive into the dirtiest corners, scrubbing and polishing until every speck of dirt is vanquished. No nook or cranny is safe from my wrath.</p>
-                        <p><strong>Routine Patrols:</strong> Like a vigilant knight, I return regularly to keep your home perpetually clean and serene. The enemy shall not rise again!</p>
-                        <p><strong>Eco-Friendly Crusades:</strong> Armed with planet-friendly potions, I protect Mother Earth while defeating grime. My battle is green and clean.</p>
-                        <p><strong>Special Ops Missions:</strong> Post-feast cleanups or prepping for royal guests, I take on any special mission with gusto and determination.</p>
-                    </li>
-                </ul>
-                <div class="cta">Join me, Otso, in my quest to keep your home a fortress of cleanliness. Together, we will triumph over dust and dirt!</div>
+                <div class="feature-content">
+                    <ul>
+                        <li>
+                            <p><strong>Deep Clean Sieges:</strong> I dive into the dirtiest corners, scrubbing and polishing until every speck of dirt is vanquished. No nook or cranny is safe from my wrath.</p>
+                            <p><strong>Routine Patrols:</strong> Like a vigilant knight, I return regularly to keep your home perpetually clean and serene. The enemy shall not rise again!</p>
+                            <p><strong>Eco-Friendly Crusades:</strong> Armed with planet-friendly potions, I protect Mother Earth while defeating grime. My battle is green and clean.</p>
+                            <p><strong>Special Ops Missions:</strong> Post-feast cleanups or prepping for royal guests, I take on any special mission with gusto and determination.</p>
+                        </li>
+                    </ul>
+                    <div class="cta">Join me, Otso, in my quest to keep your home a fortress of cleanliness. Together, we will triumph over dust and dirt!</div>
+                </div>
             </div>
-        </section>
-        <section class="features fade-in-element">
             <div class="feature">
                 <div class="img-led">
                     <img src="images/f2.png" alt="Affordable">
                 </div>
-                <ul>
-                    <li>
-                        <p><strong>Complete Clean Sweeps:</strong> My team and I storm through workstations and restrooms, leaving no trace of dirt or bacteria. Every desk, every corner will shine!</p>
-                        <p><strong>Regular Clean Patrols:</strong> To ensure the enemy does not return, I conduct regular patrols, maintaining a spotless and healthy environment for all.</p>
-                        <p><strong>Targeted Strike Missions:</strong> Boardrooms needing a deep cleanse or full office resets after events, I strike with precision and efficiency.</p>
-                        <p><strong>Green Cleaning Campaigns:</strong> Using eco-friendly weapons, I fight grime while safeguarding our beloved planet.</p>
-                    </li>
-                </ul>
-                <div class="cta">Stand with me, Otso, in this noble crusade to defend Helsinki’s offices from the clutches of dirt and bacteria. Together, we will create a workspace that gleams with cleanliness and productivity!</div>
+                <div class="feature-content">
+                    <ul>
+                        <li>
+                            <p><strong>Complete Clean Sweeps:</strong> My team and I storm through workstations and restrooms, leaving no trace of dirt or bacteria. Every desk, every corner will shine!</p>
+                            <p><strong>Regular Clean Patrols:</strong> To ensure the enemy does not return, I conduct regular patrols, maintaining a spotless and healthy environment for all.</p>
+                            <p><strong>Targeted Strike Missions:</strong> Boardrooms needing a deep cleanse or full office resets after events, I strike with precision and efficiency.</p>
+                            <p><strong>Green Cleaning Campaigns:</strong> Using eco-friendly weapons, I fight grime while safeguarding our beloved planet.</p>
+                        </li>
+                    </ul>
+                    <div class="cta">Stand with me, Otso, in this noble crusade to defend Helsinki’s offices from the clutches of dirt and bacteria. Together, we will create a workspace that gleams with cleanliness and productivity!</div>
+                </div>
             </div>
-        </section>
-        <section class="features fade-in-element">
             <div class="feature">
                 <div class="img-led">
                     <img src="images/welcome.jpg" alt="Professional">
                 </div>
-                <ul>
-                    <li>
-                        <p><strong>Post-Renovation Recovery:</strong> After the builders have left, I tackle the aftermath with expert precision, transforming chaos into cleanliness.</p>
-                        <p><strong>Event Preparation and Cleanup:</strong> From weddings to corporate galas, I ensure your event space is pristine before the guests arrive and swiftly restored to perfection afterward.</p>
-                        <p><strong>Allergy Defense Operations:</strong> For homes needing an extra layer of protection, I deploy hypoallergenic strategies to create a safe, dust-free environment for all.</p>
-                        <p><strong>Seasonal Deep Cleans:</strong> Spring or autumn, I conduct thorough cleanings that rejuvenate your home, ensuring it’s ready for any season’s challenges.</p>
-                    </li>
-                </ul>
-                <div class="cta">Stand with me, Otso, in this noble crusade to defend Helsinki’s offices from the clutches of dirt and bacteria. Together, we will create a workspace that gleams with cleanliness and productivity!</div>
+                <div class="feature-content">
+                    <ul>
+                        <li>
+                            <p><strong>Post-Renovation Recovery:</strong> After the builders have left, I tackle the aftermath with expert precision, transforming chaos into cleanliness.</p>
+                            <p><strong>Event Preparation and Cleanup:</strong> From weddings to corporate galas, I ensure your event space is pristine before the guests arrive and swiftly restored to perfection afterward.</p>
+                            <p><strong>Allergy Defense Operations:</strong> For homes needing an extra layer of protection, I deploy hypoallergenic strategies to create a safe, dust-free environment for all.</p>
+                            <p><strong>Seasonal Deep Cleans:</strong> Spring or autumn, I conduct thorough cleanings that rejuvenate your home, ensuring it’s ready for any season’s challenges.</p>
+                        </li>
+                    </ul>
+                    <div class="cta">Stand with me, Otso, in this noble crusade to defend Helsinki’s offices from the clutches of dirt and bacteria. Together, we will create a workspace that gleams with cleanliness and productivity!</div>
+                </div>
             </div>
         </section>
     </main>
