@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +17,7 @@
 
         header {
             background-color: #ffcc00;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             padding: 1rem;
         }
 
@@ -63,24 +64,35 @@
             position: relative;
             background-size: cover;
             background-position: center;
-            padding: 5rem 1rem;
+            height: 60vh;
+            overflow: hidden;
             margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
         }
 
-        .section-bg .content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .section-bg::before {
-            content: "";
+        .section-bg .hidden-content {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .section-bg:hover .hidden-content {
+            opacity: 1;
         }
 
         footer {
@@ -162,11 +174,18 @@
         }
 
         @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: orange; }
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: orange;
+            }
         }
     </style>
 </head>
+
 <body>
     <header>
         <nav class="navbar">
@@ -190,31 +209,31 @@
             <h1>About Dust Killer</h1>
         </section>
         <section class="section-bg" style="background-image: url('images/about.png');">
-            <div class="content">
+            <div class="hidden-content">
                 <h2>Our Mission</h2>
                 <p>At Dust Killer, we are dedicated to providing top-notch cleaning services for both homes and offices. Our mission is to create a clean, safe, and healthy environment for our clients. With years of experience and a commitment to excellence, our team of professionals is ready to tackle any cleaning challenge. We strive to exceed our clients' expectations with every job we undertake, ensuring that no detail is overlooked. Our focus on quality and customer satisfaction sets us apart in the cleaning industry, making us a trusted choice for all your cleaning needs. By continuously improving our methods and staying up-to-date with the latest cleaning technologies, we ensure that our services remain efficient and effective. Our team is passionate about what we do, and we take pride in transforming spaces into clean, healthy environments. We believe that a clean space is a happy space, and we are committed to making that a reality for our clients.</p>
             </div>
         </section>
         <section class="section-bg" style="background-image: url('images/4.png');">
-            <div class="content">
+            <div class="hidden-content">
                 <h2>Our Services</h2>
                 <p>Our services include deep cleaning, routine maintenance, eco-friendly solutions, and specialized missions for events and post-renovation cleanups. We use the latest cleaning technologies and eco-friendly products to ensure your space is spotless and safe for everyone. Our deep cleaning services target hard-to-reach areas and stubborn dirt, providing a thorough clean that leaves your space looking brand new. Routine maintenance services help keep your environment consistently clean, reducing the buildup of dirt and grime over time. Our eco-friendly solutions prioritize the health of both our clients and the planet, using sustainable products that are effective yet gentle. For special occasions or post-renovation cleanups, our team is equipped to handle the unique challenges these situations present, ensuring that your space is immaculate and ready for use. We tailor our services to meet the specific needs of each client, providing customized cleaning plans that deliver optimal results.</p>
             </div>
         </section>
         <section class="section-bg" style="background-image: url('images/3.png');">
-            <div class="content">
+            <div class="hidden-content">
                 <h2>Why Choose Us</h2>
                 <p>But we don't just stop at cleaning. At Dust Killer, we believe in creating a lasting impact. Our eco-friendly solutions not only ensure a healthier home or office but also contribute to a sustainable future. Each cleaning session is an opportunity for us to bring a touch of sparkle to your life, enhancing your well-being and productivity. Our commitment to sustainability means that we choose products and practices that are kind to the environment, reducing our carbon footprint while maintaining high cleaning standards. We understand that a clean environment is essential for your health and happiness, and we go above and beyond to make sure that every space we clean meets our rigorous quality standards. Our team is trained to handle a variety of cleaning challenges, from everyday messes to the toughest stains, with professionalism and care. We take the time to understand your unique needs and preferences, ensuring that our services are tailored to provide the best possible results. Trust us to create a clean, healthy, and vibrant space for you to live and work in.</p>
             </div>
         </section>
         <section class="section-bg" style="background-image: url('images/2.png');">
-            <div class="content">
+            <div class="hidden-content">
                 <h2>Our Team</h2>
                 <p>We pride ourselves on our reliability and meticulous attention to detail. Every member of our team is trained to the highest standards, ensuring that no corner is left untouched and no surface is left unpolished. Our specialized missions are tailored to meet the unique needs of each client, providing customized solutions that exceed expectations. Our team members are not only skilled cleaners but also passionate about their work, bringing a positive attitude and strong work ethic to every job. We conduct thorough background checks and training to ensure that our staff is trustworthy and capable of delivering exceptional service. Our commitment to continuous improvement means that we regularly update our training programs to incorporate the latest cleaning techniques and technologies. By fostering a culture of excellence and teamwork, we are able to provide a consistently high level of service to our clients. We believe that our people are our greatest asset, and we invest in their growth and development to ensure that they can perform at their best.</p>
             </div>
         </section>
         <section class="section-bg" style="background-image: url('images/4.png');">
-            <div class="content">
+            <div class="hidden-content">
                 <h2>Join Us</h2>
                 <p>Join us on our mission to eliminate dust and dirt from every corner. Trust Dust Killer to make your space shine! Let us transform your home or office into a sanctuary of cleanliness and order, where you can thrive in a pristine and harmonious environment. We are always looking for dedicated and hardworking individuals to join our team. If you are passionate about cleaning and take pride in your work, we would love to hear from you. As a member of our team, you will receive comprehensive training and support to help you succeed in your role. We offer competitive pay, flexible scheduling, and opportunities for advancement within the company. Our inclusive and supportive work environment fosters a sense of community and collaboration, making Dust Killer a great place to build your career. Apply today and become part of a team that values excellence, integrity, and customer satisfaction. Together, we can make a positive difference in the lives of our clients and create cleaner, healthier spaces for everyone.</p>
             </div>
@@ -249,12 +268,16 @@
         </div>
         <div class="footer-bottom fade-in-element">
             <div class="footer-info">
-                <h3><p>Dust Killer Finland</p></h3>
+                <h3>
+                    <p>Dust Killer Finland</p>
+                </h3>
                 <p>Business ID: xxxxxx-x</p>
             </div>
             <div class="footer-links">
-                <h4></h4><p>Home · Window · Moving · Office</p>
-                <p>CLEANING</p></h4>
+                <h4></h4>
+                <p>Home · Window · Moving · Office</p>
+                <p>CLEANING</p>
+                </h4>
             </div>
             <div class="footer-legal">
                 <p>Whistleblowing · Terms and conditions · Privacy policy · Cookie preferences</p>
@@ -289,4 +312,5 @@
         });
     </script>
 </body>
+
 </html>
