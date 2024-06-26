@@ -1,193 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - DUST KILLER</title>
+    <title>About Dust Killer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            color: #333;
-            background-color: #f4f4f4;
-            margin: 0;
-        }
-
-        header {
-            background-color: #ffcc00;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 1rem;
-        }
-
-        .hero {
-            position: relative;
-            height: 60vh;
-            background: url('images/22.png') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            padding: 0 1rem;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        }
-
-        .content {
-            position: relative;
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 3rem 1rem;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1;
-        }
-
-        .content h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .content p {
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .section-bg {
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
-            overflow: hidden;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-
-        .section-bg .hidden-content {
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 1rem;
-            text-align: center;
-            z-index: 2;
-        }
-
-        .section-bg .hidden-content.visible {
-            opacity: 1;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-
-        .footer-top {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            border-bottom: 1px solid #444;
-            padding-bottom: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-section {
-            margin: 1rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        .payment-methods i,
-        .app-download i {
-            font-size: 2rem;
-            margin: 0.5rem;
-        }
-
-        .social-media a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 0.5rem;
-            transition: color 0.3s;
-        }
-
-        .social-media a:hover {
-            color: #ffcc00;
-        }
-
-        .footer-bottom {
-            margin-top: 1rem;
-        }
-
-        .footer-info,
-        .footer-links,
-        .footer-legal {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links p,
-        .footer-legal p {
-            margin: 0;
-        }
-
-        @media (max-width: 768px) {
-            .footer-top {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        .typing span {
-            display: inline-block;
-            opacity: 0;
-            transition: opacity 0.2s;
-        }
-
-        .typing span.visible {
-            opacity: 1;
-        }
-
-        .typing {
-            border-right: 0.15em solid orange;
-            animation: blink-caret 0.75s step-end infinite;
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: orange; }
-        }
-    </style>
 </head>
-
 <body>
     <header>
-        <nav class="navbar">
-            <a href="#" class="logo">Dust Killer</a>
+        <nav class="navbar fade-in-element">
             <button class="hamburger">
                 <i class="fas fa-bars"></i>
             </button>
-            <ul class="nav-links">
+            <ul class="nav-links fade-in-element">
                 <li><a href="/index.html"><i class="fas fa-home"></i> HOME</a></li>
                 <li><a href="/about-dust-killer.html"><i class="fas fa-info-circle"></i> ABOUT US</a></li>
                 <li><a href="/all-services.html"><i class="fas fa-users"></i> SERVICES</a></li>
@@ -199,37 +25,38 @@
         </nav>
     </header>
     <main>
-        <section class="hero">
-            <h1>About Dust Killer</h1>
-        </section>
-        <section class="section-bg" style="background-image: url('images/about.png');">
-            <div class="hidden-content">
-                <h2>Our Mission</h2>
-                <p>At Dust Killer, we are dedicated to providing top-notch cleaning services for both homes and offices. Our mission is to create a clean, safe, and healthy environment for our clients. With years of experience and a commitment to excellence, our team of professionals is ready to tackle any cleaning challenge. We strive to exceed our clients' expectations with every job we undertake, ensuring that no detail is overlooked. Our focus on quality and customer satisfaction sets us apart in the cleaning industry, making us a trusted choice for all your cleaning needs. By continuously improving our methods and staying up-to-date with the latest cleaning technologies, we ensure that our services remain efficient and effective. Our team is passionate about what we do, and we take pride in transforming spaces into clean, healthy environments. We believe that a clean space is a happy space, and we are committed to making that a reality for our clients.</p>
+        <section class="hero fade-in-element">
+            <div class="hero-text">
+                Learn more about Dust Killer, our mission, our values, and our commitment to providing top-notch cleaning services for both homes and offices.
             </div>
         </section>
-        <section class="section-bg" style="background-image: url('images/4.png');">
-            <div class="hidden-content">
-                <h2>Our Services</h2>
-                <p>Our services include deep cleaning, routine maintenance, eco-friendly solutions, and specialized missions for events and post-renovation cleanups. We use the latest cleaning technologies and eco-friendly products to ensure your space is spotless and safe for everyone. Our deep cleaning services target hard-to-reach areas and stubborn dirt, providing a thorough clean that leaves your space looking brand new. Routine maintenance services help keep your environment consistently clean, reducing the buildup of dirt and grime over time. Our eco-friendly solutions prioritize the health of both our clients and the planet, using sustainable products that are effective yet gentle. For special occasions or post-renovation cleanups, our team is equipped to handle the unique challenges these situations present, ensuring that your space is immaculate and ready for use. We tailor our services to meet the specific needs of each client, providing customized cleaning plans that deliver optimal results.</p>
+        <section class="homepage-features fade-in-element">
+            <div class="homepage-feature">
+                <div class="img-led">
+                    <img src="images/about1.jpg" alt="Our Mission">
+                </div>
+                <div class="homepage-feature-content">
+                    <h2>Our Mission</h2>
+                    <p>At Dust Killer, our mission is to provide exceptional cleaning services that create clean, safe, and healthy environments for our clients. We are dedicated to excellence and sustainability, using eco-friendly products to protect both our clients and the planet.</p>
+                </div>
             </div>
-        </section>
-        <section class="section-bg" style="background-image: url('images/3.png');">
-            <div class="hidden-content">
-                <h2>Why Choose Us</h2>
-                <p>But we don't just stop at cleaning. At Dust Killer, we believe in creating a lasting impact. Our eco-friendly solutions not only ensure a healthier home or office but also contribute to a sustainable future. Each cleaning session is an opportunity for us to bring a touch of sparkle to your life, enhancing your well-being and productivity. Our commitment to sustainability means that we choose products and practices that are kind to the environment, reducing our carbon footprint while maintaining high cleaning standards. We understand that a clean environment is essential for your health and happiness, and we go above and beyond to make sure that every space we clean meets our rigorous quality standards. Our team is trained to handle a variety of cleaning challenges, from everyday messes to the toughest stains, with professionalism and care. We take the time to understand your unique needs and preferences, ensuring that our services are tailored to provide the best possible results. Trust us to create a clean, healthy, and vibrant space for you to live and work in.</p>
+            <div class="homepage-feature">
+                <div class="img-led">
+                    <img src="images/about2.jpg" alt="Our Values">
+                </div>
+                <div class="homepage-feature-content">
+                    <h2>Our Values</h2>
+                    <p>Our core values are integrity, reliability, and customer satisfaction. We believe in building long-term relationships with our clients based on trust and exceptional service. Our team is committed to upholding these values in every job we undertake.</p>
+                </div>
             </div>
-        </section>
-        <section class="section-bg" style="background-image: url('images/2.png');">
-            <div class="hidden-content">
-                <h2>Our Team</h2>
-                <p>We pride ourselves on our reliability and meticulous attention to detail. Every member of our team is trained to the highest standards, ensuring that no corner is left untouched and no surface is left unpolished. Our specialized missions are tailored to meet the unique needs of each client, providing customized solutions that exceed expectations. Our team members are not only skilled cleaners but also passionate about their work, bringing a positive attitude and strong work ethic to every job. We conduct thorough background checks and training to ensure that our staff is trustworthy and capable of delivering exceptional service. Our commitment to continuous improvement means that we regularly update our training programs to incorporate the latest cleaning techniques and technologies. By fostering a culture of excellence and teamwork, we are able to provide a consistently high level of service to our clients. We believe that our people are our greatest asset, and we invest in their growth and development to ensure that they can perform at their best.</p>
-            </div>
-        </section>
-        <section class="section-bg" style="background-image: url('images/4.png');">
-            <div class="hidden-content">
-                <h2>Join Us</h2>
-                <p>Join us on our mission to eliminate dust and dirt from every corner. Trust Dust Killer to make your space shine! Let us transform your home or office into a sanctuary of cleanliness and order, where you can thrive in a pristine and harmonious environment. We are always looking for dedicated and hardworking individuals to join our team. If you are passionate about cleaning and take pride in your work, we would love to hear from you. As a member of our team, you will receive comprehensive training and support to help you succeed in your role. We offer competitive pay, flexible scheduling, and opportunities for advancement within the company. Our inclusive and supportive work environment fosters a sense of community and collaboration, making Dust Killer a great place to build your career. Apply today and become part of a team that values excellence, integrity, and customer satisfaction. Together, we can make a positive difference in the lives of our clients and create cleaner, healthier spaces for everyone.</p>
+            <div class="homepage-feature">
+                <div class="img-led">
+                    <img src="images/about3.jpg" alt="Our Team">
+                </div>
+                <div class="homepage-feature-content">
+                    <h2>Our Team</h2>
+                    <p>Our team of professionals is experienced, trained, and passionate about delivering high-quality cleaning services. We invest in continuous training and development to ensure that our staff is equipped with the latest skills and knowledge to meet our clients' needs.</p>
+                </div>
             </div>
         </section>
     </main>
@@ -279,23 +106,18 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
+    <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/0.1.0-beta.2/libs/oversea/index.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const hiddenContents = document.querySelectorAll('.hidden-content');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            hiddenContents.forEach(content => {
-                observer.observe(content);
-            });
+        new CozeWebSDK.WebChatClient({
+            config: {
+                bot_id: '7382999998339907592',
+            },
+            componentProps: {
+                title: 'DUST KILLER CUSTOMER CARE',
+                icon: 'https://lf16-alice-tos-sign.oceanapi-i18n.com/obj/ocean-cloud-tos-sg/FileBizType.BIZ_BOT_ICON/7334556397025330178_1718989003970850964_WH2SPFmHXp.png?lk3s=50ccb0c5&x-expires=1719076645&x-signature=nZz%2B40Hx8bfPYtucDdYwmmsmoqw%3D',
+                layout: 'mobile',
+            },
         });
     </script>
 </body>
-
 </html>
