@@ -71,7 +71,6 @@ header {
     border-radius: 5px;
 }
 
-
 /* Hero section styling */
 .hero {
     position: relative;
@@ -146,6 +145,12 @@ header {
     border-radius: 10px;
     width: 100%;
     height: auto;
+    transition: transform 0.5s, filter 0.5s;
+}
+
+.homepage-feature .img-led img:hover {
+    transform: scale(1.05) rotate(3deg);
+    filter: brightness(1.2);
 }
 
 .homepage-feature-content {
@@ -173,106 +178,6 @@ header {
     font-size: 1.2rem;
     color: #0371AE;
     font-weight: bold;
-}
-
-/* Features Section */
-.features {
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem 0;
-    background-color: #ffcc00;
-}
-
-.feature {
-    background: #555555;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    padding: 0.5rem;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-}
-
-.feature:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.feature img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.feature h2 {
-    margin-top: 1rem;
-    font-size: 1.5rem;
-    color: #333;
-}
-
-.feature div {
-    font-size: 1rem;
-    color: #f1ecec;
-    margin-top: 0.5rem;
-}
-
-/* 3D Effect for Lists */
-.feature ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.feature ul li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 15px;
-    font-size: 1rem;
-    color: #333;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
-}
-
-.feature ul li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: #ffc107;
-    color: #fff;
-}
-
-/* Content Section Styles */
-.content {
-    background: #fff;
-    padding: 2rem;
-}
-
-.content h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-}
-
-.content p {
-    margin-bottom: 1rem;
-    line-height: 1.5;
-}
-
-.content ul {
-    list-style: disc;
-    margin: 1rem 0;
-    padding-left: 2rem;
-}
-
-.content ul li {
-    margin-bottom: 0.5rem;
-}
-
-.content ul li strong {
-    color: #ffcc00;
 }
 
 /* Footer Styles */
@@ -370,6 +275,15 @@ footer {
     .nav-links a {
         padding: 0.5rem;
     }
+
+    .homepage-feature {
+        flex-direction: column;
+    }
+
+    .homepage-feature .img-led, .homepage-feature-content {
+        max-width: 100%;
+        padding: 0.5rem;
+    }
 }
 
 @media screen and (min-width: 769px) {
@@ -379,7 +293,7 @@ footer {
     }
 }
 
-/* Thêm hiệu ứng hover cho các button */
+/* Add hover effect for buttons */
 button {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
