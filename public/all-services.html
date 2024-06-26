@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +17,7 @@
 
         header {
             background-color: #ffcc00;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             padding: 1rem;
         }
 
@@ -38,14 +39,12 @@
         }
 
         .content {
-            position: relative;
-            max-width: 1200px;
-            margin: 2rem auto;
             padding: 3rem 1rem;
             background: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-align: center;
+            flex: 1;
         }
 
         .content h2 {
@@ -60,27 +59,33 @@
         }
 
         .section-bg {
-            position: relative;
-            background-size: cover;
-            background-position: center;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
             padding: 5rem 1rem;
             margin-bottom: 2rem;
         }
 
-        .section-bg .content {
-            position: relative;
-            z-index: 2;
+        .section-bg .content,
+        .section-bg .image-container {
+            flex: 1;
+            max-width: 50%;
+            box-sizing: border-box;
+            padding: 1rem;
         }
 
-        .section-bg::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
+        .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
         }
 
         .btn {
@@ -162,6 +167,16 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .section-bg .content,
+            .section-bg .image-container {
+                max-width: 100%;
+                padding: 1rem 0;
+            }
+
+            .section-bg {
+                padding: 3rem 1rem;
+            }
         }
 
         .typing span {
@@ -180,11 +195,18 @@
         }
 
         @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: orange; }
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: orange;
+            }
         }
     </style>
 </head>
+
 <body>
     <header>
         <nav class="navbar">
@@ -207,7 +229,7 @@
         <section class="hero">
             <h1>Our Services</h1>
         </section>
-        <section class="section-bg" style="background-image: url('images/about.png')">
+        <section class="section-bg">
             <div class="content">
                 <h2>Home Cleaning</h2>
                 <p>Greetings, brave souls of Uusimaa! I am Otso, the fearless Dust Warrior, here to keep your homes sparkling clean and free from the evil forces of dirt and grime.</p>
@@ -219,8 +241,11 @@
                 </ul>
                 <a href="/home-cleaning.html" class="btn">Learn More</a>
             </div>
+            <div class="image-container">
+                <img src="images/about.png" alt="Home Cleaning">
+            </div>
         </section>
-        <section class="section-bg" style="background-image: url('images/3.png')">
+        <section class="section-bg">
             <div class="content">
                 <h2>Window Cleaning</h2>
                 <p>Hello, sunshine seekers of Uusimaa! I’m Otso, your friendly neighborhood Dust Warrior, and I’m here to make your windows gleam with brightness.</p>
@@ -232,8 +257,11 @@
                 </ul>
                 <a href="/window-cleaning.html" class="btn">Learn More</a>
             </div>
+            <div class="image-container">
+                <img src="images/3.png" alt="Window Cleaning">
+            </div>
         </section>
-        <section class="section-bg" style="background-image: url('images/1.jpg')">
+        <section class="section-bg">
             <div class="content">
                 <h2>Moving Cleaning</h2>
                 <p>Ahoy, movers and shakers of Uusimaa! Moving can be a messy adventure, but fear not! I, Otso, the indomitable Dust Warrior, am here to make your moving day a breeze.</p>
@@ -245,8 +273,11 @@
                 </ul>
                 <a href="/moving-cleaning.html" class="btn">Learn More</a>
             </div>
+            <div class="image-container">
+                <img src="images/1.jpg" alt="Moving Cleaning">
+            </div>
         </section>
-        <section class="section-bg" style="background-image: url('images/9.jpg')">
+        <section class="section-bg">
             <div class="content">
                 <h2>Office Cleaning</h2>
                 <p>Citizens of Uusimaa’s bustling commercial hubs, the battle against bacteria and grime is fierce, but fear not! I am Otso, the indomitable Guardian.</p>
@@ -257,6 +288,9 @@
                     <li><strong>Targeted Strike Missions:</strong> Boardrooms needing a deep cleanse or full office resets after events, I strike with precision and efficiency.</li>
                 </ul>
                 <a href="/office-cleaning.html" class="btn">Learn More</a>
+            </div>
+            <div class="image-container">
+                <img src="images/9.jpg" alt="Office Cleaning">
             </div>
         </section>
     </main>
@@ -289,12 +323,16 @@
         </div>
         <div class="footer-bottom fade-in-element">
             <div class="footer-info">
-                <h3><p>Dust Killer Finland</p></h3>
+                <h3>
+                    <p>Dust Killer Finland</p>
+                </h3>
                 <p>Business ID: xxxxxx-x</p>
             </div>
             <div class="footer-links">
-                <h4></h4><p>Home · Window · Moving · Office</p>
-                <p>CLEANING</p></h4>
+                <h4></h4>
+                <p>Home · Window · Moving · Office</p>
+                <p>CLEANING</p>
+                </h4>
             </div>
             <div class="footer-legal">
                 <p>Whistleblowing · Terms and conditions · Privacy policy · Cookie preferences</p>
@@ -329,4 +367,5 @@
         });
     </script>
 </body>
+
 </html>
