@@ -40,7 +40,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #549ae2;
+    background-color: #F2CB05;
     color: #fff;
 }
 
@@ -107,7 +107,7 @@ header {
 /* Homepage Features Section */
 .homepage-features {
     padding: 2rem 1rem;
-    background-color: #ffcc00;
+    background-color: #F2CB05;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -118,7 +118,7 @@ header {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    background: #555555;
+    background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -158,7 +158,7 @@ header {
     max-width: 50%;
     box-sizing: border-box;
     padding: 1rem;
-    color: #f1ecec;
+    color: rgba(0, 0, 0, 0.75);
 }
 
 .homepage-feature-content ul {
@@ -176,7 +176,7 @@ header {
 
 .cta {
     font-size: 1.2rem;
-    color: #0371AE;
+    color: #F2CB05;
     font-weight: bold;
 }
 
