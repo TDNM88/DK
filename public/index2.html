@@ -46,38 +46,37 @@
         .features {
             padding: 2rem 1rem;
             background-color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
 
         .feature {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            margin-bottom: 2rem;
             text-align: left;
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .feature .img-led {
-            flex: 1;
             display: flex;
             justify-content: center;
+            width: 100%;
             margin-bottom: 1rem;
-            max-width: 50%;
-            box-sizing: border-box;
-            padding: 1rem;
         }
 
         .feature .img-led img {
             border-radius: 10px;
             width: 100%;
-            height: auto;
+            max-width: 400px;
         }
 
         .feature-content {
-            flex: 1;
-            max-width: 50%;
-            box-sizing: border-box;
-            padding: 1rem;
+            width: 100%;
         }
 
         .feature-content ul {
@@ -97,6 +96,7 @@
             font-size: 1.2rem;
             color: #0371AE;
             font-weight: bold;
+            text-align: center;
         }
 
         footer {
@@ -104,18 +104,6 @@
             color: white;
             padding: 1rem;
             text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .feature {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .feature .img-led, .feature-content {
-                max-width: 100%;
-                padding: 0.5rem;
-            }
         }
     </style>
 </head>
@@ -145,7 +133,7 @@
         <section class="features fade-in-element">
             <div class="feature">
                 <div class="img-led">
-                    <img src="images/greeting.pngpng" alt="Reliable">
+                    <img src="images/greeting.png" alt="Reliable">
                 </div>
                 <div class="feature-content">
                     <ul>
