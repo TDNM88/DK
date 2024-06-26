@@ -3,298 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prices - DUST KILLER</title>
+    <title>Prices - Dust Killer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            color: #333;
-            background-color: #f4f4f4;
-            margin: 0;
-        }
-
-        header {
-            background-color: #ffcc00;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 1rem;
-        }
-
-        .content {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .content h1 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #ffcc00;
-        }
-
-        .content h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #ffcc00; /* Đồng bộ màu chữ cho h2 */
-        }
-
-        .content p {
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            color: #fff;
-        }
-
-        .content ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .content ul li {
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-            color: #fff; /* Đảm bảo màu chữ trắng cho ul và li */
-        }
-
-        .price-section {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .price-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-
-        .price-section h2 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            position: relative;
-            z-index: 2;
-            color: #ffcc00; /* Đồng bộ màu chữ cho h2 */
-        }
-
-        .price-section p,
-        .price-section ul {
-            font-size: 1.2rem;
-            position: relative;
-            z-index: 2;
-            color: #fff;
-        }
-
-        .highlight-section {
-            background-image: url('images/hero.jpg');
-            padding: 20px;
-            margin: 2rem 0;
-            color: #fff;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .highlight-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-
-        .highlight-section h2 {
-            position: relative;
-            z-index: 2;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #ffcc00; /* Đồng bộ màu chữ */
-        }
-
-        .highlight-section p {
-            position: relative;
-            z-index: 2;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .note {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #ffcc00;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            z-index: 2;
-        }
-
-        .note:hover {
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-
-        .footer-top {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            border-bottom: 1px solid #444;
-            padding-bottom: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-section {
-            margin: 1rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        .payment-methods i,
-        .app-download i {
-            font-size: 2rem;
-            margin: 0.5rem;
-        }
-
-        .social-media a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 0.5rem;
-            transition: color 0.3s;
-        }
-
-        .social-media a:hover {
-            color: #ffcc00;
-        }
-
-        .footer-bottom {
-            margin-top: 1rem;
-        }
-
-        .footer-info,
-        .footer-links,
-        .footer-legal {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links p,
-        .footer-legal p {
-            margin: 0;
-        }
-
-        @media (max-width: 768px) {
-            .footer-top {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        .typing span {
-            display: inline-block;
-            opacity: 0;
-            transition: opacity 0.2s;
-        }
-
-        .typing span.visible {
-            opacity: 1;
-        }
-
-        .typing {
-            border-right: 0.15em solid orange;
-            animation: blink-caret 0.75s step-end infinite;
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: orange; }
-        }
-    </style>
 </head>
 <body>
     <header>
-    <nav class="navbar">
-        <a href="#" class="logo">Dust Killer</a>
-        <button class="hamburger">
-            <i class="fas fa-bars"></i>
-        </button>
-        <ul class="nav-links">
-            <li><a href="/index.html"><i class="fas fa-home"></i> HOME</a></li>
-            <li><a href="/about-dust-killer.html"><i class="fas fa-info-circle"></i> ABOUT US</a></li>
-            <li><a href="/all-services.html"><i class="fas fa-users"></i> SERVICES</a></li>
-            <li><a href="/prices.html"><i class="fas fa-dollar-sign"></i> PRICES</a></li>
-            <li><a href="/tax-deduction.html"><i class="fas fa-landmark"></i> TAX DEDUCTION</a></li>
-            <li><a href="/come-work-with-us.html"><i class="fas fa-user-plus"></i> JOIN US</a></li>
-            <li><a href="/blog.html"><i class="fas fa-blog"></i> BLOG</a></li>
-        </ul>
-    </nav>
-</header>
-
+        <nav class="navbar fade-in-element">
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links fade-in-element">
+                <li><a href="/index.html"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="/about-dust-killer.html"><i class="fas fa-info-circle"></i> ABOUT US</a></li>
+                <li><a href="/all-services.html"><i class="fas fa-users"></i> SERVICES</a></li>
+                <li><a href="/prices.html"><i class="fas fa-dollar-sign"></i> PRICES</a></li>
+                <li><a href="/tax-deduction.html"><i class="fas fa-landmark"></i> TAX DEDUCTION</a></li>
+                <li><a href="/come-work-with-us.html"><i class="fas fa-user-plus"></i> JOIN US</a></li>
+                <li><a href="/blog.html"><i class="fas fa-blog"></i> BLOG</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <section class="content">
-            <h1>The Cost of Wars</h1>
-            <div class="price-section" style="background-image: url('images/6.png');">
-                <h2>First Time with Dust Killer:</h2>
-                <p>69,99 €/h (~27.99): Begin your first cleaning adventure with Otso and the team! We’ll conquer every hidden enemy, ensuring your home radiates with triumph.</p>
+        <section class="hero fade-in-element">
+            <div class="hero-text">
+                Check out our competitive prices for all our top-notch cleaning services. We offer value for money, ensuring you get the best service for the best price.
             </div>
-
-            <div class="price-section" style="background-image: url('images/blog1.jpg');">
-                <h2>Continuous Home Cleaning:</h2>
-                <ul>
-                    <li>Weekly Patrols: 52,99 €/h (~21.19): Otso will lead weekly patrols to guard your home against the relentless forces of dirt, keeping it a stronghold of cleanliness.</li>
-                    <li>Biweekly Raids: 59,99 €/h (~23.99): Every two weeks, our team will launch strategic raids to ensure your home remains an unbreachable fortress.</li>
-                    <li>Monthly Sieges: 63,99 €/h (~25.59): Once a month, Otso and his warriors will execute a full-scale siege on grime, leaving your home victorious and spotless.</li>
-                </ul>
+        </section>
+        <section class="homepage-features fade-in-element">
+            <div class="homepage-feature">
+                <div class="img-led">
+                    <img src="images/price1.jpg" alt="Home Cleaning Prices">
+                </div>
+                <div class="homepage-feature-content">
+                    <h2>Home Cleaning Prices</h2>
+                    <p>Our home cleaning services are affordable and comprehensive. We offer various packages to suit your needs and budget.</p>
+                    <ul>
+                        <li><strong>Basic Package:</strong> $50 per session</li>
+                        <li><strong>Standard Package:</strong> $80 per session</li>
+                        <li><strong>Premium Package:</strong> $120 per session</li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="price-section" style="background-image: url('images/tax.jpg');">
-                <h2>Moving Battle Campaigns:</h2>
-                <p>69.99€/h (~27.99): Moving can be a chaotic quest, but fear not! Otso will make sure your new home is spotless and your old one is ready for the next adventurer. Fear not the penalties from landlords; we’ll ensure the battlefield is left spotless, allowing you to march forward with confidence and glory!</p>
+            <div class="homepage-feature">
+                <div class="img-led">
+                    <img src="images/price2.jpg" alt="Office Cleaning Prices">
+                </div>
+                <div class="homepage-feature-content">
+                    <h2>Office Cleaning Prices</h2>
+                    <p>Our office cleaning services are designed to keep your workspace clean and productive. Choose from our flexible pricing options.</p>
+                    <ul>
+                        <li><strong>Basic Package:</strong> $100 per session</li>
+                        <li><strong>Standard Package:</strong> $150 per session</li>
+                        <li><strong>Premium Package:</strong> $200 per session</li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="price-section" style="background-image: url('images/5.png');">
-                <h2>Window War Missions:</h2>
-                <p>73,99 €/h (~29.59): Join Otso in the ultimate window cleaning battle! We’ll make every pane sparkle, ensuring your windows shine brilliantly and let the sunlight flood in.</p>
+            <div class="homepage-feature">
+                <div class="img-led">
+                    <img src="images/price3.jpg" alt="Window Cleaning Prices">
+                </div>
+                <div class="homepage-feature-content">
+                    <h2>Window Cleaning Prices</h2>
+                    <p>Get sparkling clean windows at competitive prices. Our window cleaning packages are designed to suit different needs.</p>
+                    <ul>
+                        <li><strong>Basic Package:</strong> $30 per session</li>
+                        <li><strong>Standard Package:</strong> $50 per session</li>
+                        <li><strong>Premium Package:</strong> $70 per session</li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="price-section" style="background-image: url('images/about.png');">
-                <h2>Special Ops: Office & Maintenance Cleaning:</h2>
-                <p>Contact Us for a Quote: For offices and maintenance cleaning, our services are customized to your needs. Join forces with Otso to maintain a spotless and productive workspace. Contact us to discuss your mission and get a personalized quote.</p>
-            </div>
-
-            <div class="highlight-section">
-                <h2>Join the Dust Killer crusade, and together, we’ll conquer dirt and grime with joy and determination!</h2>
-                <p class="note">*11,99 €/h: Battle initiation fee.</p>
-                <p class="note">**The Ministry of Cleanliness supports 60% of our war efforts.</p>
-                <p class="note">***All weapons are provided by us, with no hidden fees.</p>
+            <div class="homepage-feature">
+                <div class="img-led">
+                    <img src="images/price4.jpg" alt="Post-Renovation Cleaning Prices">
+                </div>
+                <div class="homepage-feature-content">
+                    <h2>Post-Renovation Cleaning Prices</h2>
+                    <p>Our post-renovation cleaning services ensure your space is spotless after construction work, all at reasonable prices.</p>
+                    <ul>
+                        <li><strong>Basic Package:</strong> $150 per session</li>
+                        <li><strong>Standard Package:</strong> $200 per session</li>
+                        <li><strong>Premium Package:</strong> $300 per session</li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
@@ -327,12 +118,16 @@
         </div>
         <div class="footer-bottom fade-in-element">
             <div class="footer-info">
-                <h3><p>Dust Killer Finland</p></h3>
+                <h3>
+                    <p>Dust Killer Finland</p>
+                </h3>
                 <p>Business ID: xxxxxx-x</p>
             </div>
             <div class="footer-links">
-                <h4></h4><p>Home · Window · Moving · Office</p>
-                <p>CLEANING</p></h4>
+                <h4></h4>
+                <p>Home · Window · Moving · Office</p>
+                <p>CLEANING</p>
+                </h4>
             </div>
             <div class="footer-legal">
                 <p>Whistleblowing · Terms and conditions · Privacy policy · Cookie preferences</p>
@@ -340,30 +135,17 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
+    <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/0.1.0-beta.2/libs/oversea/index.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const headingElements = document.querySelectorAll('.price-section h2');
-
-            headingElements.forEach(headingElement => {
-                headingElement.addEventListener('mouseover', function () {
-                    if (!headingElement.classList.contains('typing')) {
-                        const text = headingElement.innerText;
-                        const characters = text.split('');
-                        headingElement.innerHTML = '';
-                        headingElement.classList.add('typing');
-
-                        characters.forEach((char, index) => {
-                            const span = document.createElement('span');
-                            span.innerHTML = char === ' ' ? '&nbsp;' : char;
-                            headingElement.appendChild(span);
-
-                            setTimeout(() => {
-                                span.classList.add('visible');
-                            }, 50 * index);
-                        });
-                    }
-                });
-            });
+        new CozeWebSDK.WebChatClient({
+            config: {
+                bot_id: '7382999998339907592',
+            },
+            componentProps: {
+                title: 'DUST KILLER CUSTOMER CARE',
+                icon: 'https://lf16-alice-tos-sign.oceanapi-i18n.com/obj/ocean-cloud-tos-sg/FileBizType.BIZ_BOT_ICON/7334556397025330178_1718989003970850964_WH2SPFmHXp.png?lk3s=50ccb0c5&x-expires=1719076645&x-signature=nZz%2B40Hx8bfPYtucDdYwmmsmoqw%3D',
+                layout: 'mobile',
+            },
         });
     </script>
 </body>
