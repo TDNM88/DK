@@ -310,8 +310,8 @@ button:hover {
             z-index: 1000;
         }
         .floating-button img {
-            width: 200px; /* Adjust the size as needed */
-            height: 200px; /* Adjust the size as needed */
+            width: 150px; /* Adjust the size as needed */
+            height: 150px; /* Adjust the size as needed */
             cursor: pointer;
             animation: blink 1s infinite; /* Adding blink animation */
         }
