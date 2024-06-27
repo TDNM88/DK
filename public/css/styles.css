@@ -302,3 +302,21 @@ button:hover {
     transform: scale(1.1);
     background-color: #ff5722;
 }
+
+.floating-button {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+        .floating-button img {
+            width: 50px; /* Adjust the size as needed */
+            height: 50px; /* Adjust the size as needed */
+            cursor: pointer;
+            animation: blink 1s infinite; /* Adding blink animation */
+        }
+        @keyframes blink {
+            0% { filter: brightness(1); }
+            50% { filter: brightness(2); }
+            100% { filter: brightness(1); }
+        }
