@@ -84,7 +84,7 @@
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript">
         (function(){
-            emailjs.init("tK3SW2i0Y4Esuj-0u");
+            emailjs.init("-KdUIEYlzAc2yVn6y");
         })();
     </script>
 </head>
@@ -114,7 +114,7 @@
                         <input type="email" id="email" name="email" placeholder="Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="postcode" name="postcode" placeholder="Postcode" required>
+                        <input type="text" id="address" name="address" placeholder="Address" required>
                     </div>
                     <div class="form-group">
                         <input type="text" id="home-size" name="home_size" placeholder="Home size (m²)" required>
@@ -183,7 +183,7 @@
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
 
-            emailjs.sendForm('service_fzrfnox', 'template_mevp4uf', this)
+            emailjs.sendForm('service_agelotp', 'template_zak9cck', this)
                 .then(function() {
                     alert('Email sent successfully!');
                 }, function(error) {
