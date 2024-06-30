@@ -81,6 +81,12 @@
             background-color: #FFC107;
         }
     </style>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("tK3SW2i0Y4Esuj-0u");
+        })();
+    </script>
 </head>
 <body>
     <header>
@@ -100,7 +106,7 @@
         <div class="container">
             <div class="registration-form">
                 <h2>Submit this form to get more freedom in your life</h2>
-                <form action="send_email.php" method="post">
+                <form id="contact-form">
                     <div class="form-group">
                         <input type="tel" id="phone-number" name="phone_number" placeholder="Phone number" required>
                     </div>
@@ -172,6 +178,17 @@
                 icon: 'https://lf16-alice-tos-sign.oceanapi-i18n.com/obj/ocean-cloud-tos-sg/FileBizType.BIZ_BOT_ICON/7334556397025330178_1718989003970850964_WH2SPFmHXp.png?lk3s=50ccb0c5&x-expires=1719076645&x-signature=nZz%2B40Hx8bfPYtucDdYwmmsmoqw%3D',
                 layout: 'mobile',
             },
+        });
+        
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            emailjs.sendForm('service_fzrfnox', 'template_mevp4uf', this)
+                .then(function() {
+                    alert('Email sent successfully!');
+                }, function(error) {
+                    alert('Failed to send email: ' + JSON.stringify(error));
+                });
         });
     </script>
 </body>
