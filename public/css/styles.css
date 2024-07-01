@@ -324,10 +324,15 @@ button:hover {
 .neon-text {
     font-size: 1em;
     font-family: 'Arial', sans-serif;
-    color: #fff;
-    text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+    color: #00BFFF; /* Finland blue color */
+    text-shadow: 0 0 5px #fff, 0 0 10px #00BFFF, 0 0 20px #00BFFF, 0 0 30px #00BFFF, 0 0 40px #00BFFF, 0 0 50px #00BFFF, 0 0 60px #00BFFF, 0 0 70px #00BFFF;
     position: fixed;
-    bottom: 80px; /* Adjust the position as needed */
+    bottom: 100px; /* Adjust the position as needed */
     right: 20px;
     z-index: 1000;
+    text-align: right;
+}
+
+.neon-text span {
+    display: block;
 }
