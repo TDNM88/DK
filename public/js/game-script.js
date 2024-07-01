@@ -2,6 +2,7 @@ const gameArea = document.getElementById('gameArea');
 const plane = document.getElementById('plane');
 const startButton = document.getElementById('startGame');
 const scoreDisplay = document.getElementById('score');
+const phoneNumberInput = document.getElementById('phoneNumber');
 let score = 0;
 let planeSpeed = 10;
 let bulletSpeed = 5;
@@ -9,6 +10,8 @@ let enemySpeed = 2;
 let level = 1;
 let bulletLevel = 1;
 let gameInterval;
+let gameTimer;
+const gameTimeLimit = 60000; // 60 seconds
 
 document.addEventListener('keydown', handleKeyDown);
 startButton.addEventListener('click', startGame);
@@ -97,7 +100,7 @@ function moveEnemy(enemy) {
         if (parseInt(enemy.style.top) > gameArea.clientHeight) {
             clearInterval(enemyInterval);
             gameArea.removeChild(enemy);
-            endGame();
+            endGame(false);
         }
     }, 20);
 }
@@ -118,6 +121,9 @@ function checkCollision(bullet, bulletInterval) {
             clearInterval(bulletInterval);
             score++;
             scoreDisplay.textContent = `Score: ${score}`;
+            if (score >= 100) {
+                endGame(true);
+            }
             if (score % 10 === 0) {
                 levelUp();
             }
@@ -134,14 +140,27 @@ function levelUp() {
 }
 
 function startGame() {
+    const phoneNumber = phoneNumberInput.value.trim();
+    if (!phoneNumber) {
+        alert("Please enter your phone number.");
+        return;
+    }
     score = 0;
     scoreDisplay.textContent = `Score: ${score}`;
     gameInterval = setInterval(createEnemy, 1000);
+    gameTimer = setTimeout(() => endGame(false), gameTimeLimit);
 }
 
-function endGame() {
+function endGame(isWinner) {
     clearInterval(gameInterval);
-    alert('Game Over!');
+    clearTimeout(gameTimer);
+    const phoneNumber = phoneNumberInput.value.trim();
+    if (isWinner) {
+        alert('Congratulations! You receive a special gift from Dust Killer.');
+        saveResult(phoneNumber, score);
+    } else {
+        alert('Good luck next time!');
+    }
     resetGame();
 }
 
@@ -154,3 +173,90 @@ function resetGame() {
     bulletLevel = 1;
     enemySpeed = 2;
 }
+
+function saveResult(phoneNumber, score) {
+    // Save the result to the leaderboard or database
+    console.log(`Phone Number: ${phoneNumber}, Score: ${score}`);
+    // Implement```javascript
+const gameArea = document.getElementById('gameArea');
+const plane = document.getElementById('plane');
+const startButton = document.getElementById('startGame');
+const scoreDisplay = document.getElementById('score');
+const phoneNumberInput = document.getElementById('phoneNumber');
+let score = 0;
+let planeSpeed = 10;
+let bulletSpeed = 5;
+let enemySpeed = 2;
+let level = 1;
+let bulletLevel = 1;
+let gameInterval;
+let gameTimer;
+const gameTimeLimit = 60000; // 60 seconds
+
+document.addEventListener('keydown', handleKeyDown);
+startButton.addEventListener('click', startGame);
+gameArea.addEventListener('touchstart', handleTouchStart);
+gameArea.addEventListener('touchmove', handleTouchMove);
+gameArea.addEventListener('touchend', handleTouchEnd);
+
+let touchStartX = null;
+
+function handleKeyDown(event) {
+    switch (event.key) {
+        case 'ArrowLeft':
+            movePlane(-planeSpeed);
+            break;
+        case 'ArrowRight':
+            movePlane(planeSpeed);
+            break;
+        case ' ':
+            shoot();
+            break;
+    }
+}
+
+function handleTouchStart(event) {
+    touchStartX = event.touches[0].clientX;
+}
+
+function handleTouchMove(event) {
+    if (!touchStartX) return;
+
+    let touchMoveX = event.touches[0].clientX;
+    let diff = touchMoveX - touchStartX;
+    if (diff > 0) {
+        movePlane(planeSpeed);
+    } else {
+        movePlane(-planeSpeed);
+    }
+    touchStartX = touchMoveX;
+}
+
+function handleTouchEnd(event) {
+    shoot();
+    touchStartX = null;
+}
+
+function movePlane(distance) {
+    const currentLeft = parseInt(plane.style.left) || 0;
+    const newLeft = Math.min(Math.max(currentLeft + distance, 0), gameArea.clientWidth - plane.clientWidth);
+    plane.style.left = newLeft + 'px';
+}
+
+function shoot() {
+    for (let i = 0; i < bulletLevel; i++) {
+        const bullet = document.createElement('div');
+        bullet.className = 'bullet';
+        bullet.style.left = (plane.offsetLeft + plane.clientWidth / 2 - 2.5) + 'px';
+        bullet.style.bottom = plane.clientHeight + 'px';
+        gameArea.appendChild(bullet);
+        moveBullet(bullet);
+    }
+}
+
+function moveBullet(bullet) {
+    const bulletInterval = setInterval(() => {
+        bullet.style.bottom = (parseInt(bullet.style.bottom) + bulletSpeed) + 'px';
+        if (parseInt(bullet.style.bottom) > gameArea.clientHeight) {
+            clearInterval(bulletInterval);
+           
