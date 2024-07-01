@@ -2,16 +2,18 @@ const gameArea = document.getElementById('gameArea');
 const plane = document.getElementById('plane');
 const startButton = document.getElementById('startGame');
 const scoreDisplay = document.getElementById('score');
+const timerDisplay = document.getElementById('timer');
 const phoneNumberInput = document.getElementById('phoneNumber');
 let score = 0;
 let planeSpeed = 10;
 let bulletSpeed = 5;
-let enemySpeed = 2;
+let enemySpeed = 1; // Reduced speed for easier difficulty
 let level = 1;
 let bulletLevel = 1;
 let gameInterval;
 let gameTimer;
-const gameTimeLimit = 60000; // 60 seconds
+let countdownTimer;
+const gameTimeLimit = 60; // 60 seconds
 
 document.addEventListener('keydown', handleKeyDown);
 startButton.addEventListener('click', startGame);
@@ -147,13 +149,25 @@ function startGame() {
     }
     score = 0;
     scoreDisplay.textContent = `Score: ${score}`;
-    gameInterval = setInterval(createEnemy, 1000);
-    gameTimer = setTimeout(() => endGame(false), gameTimeLimit);
+    timerDisplay.textContent = `Time: ${gameTimeLimit}`;
+    gameInterval = setInterval(createEnemy, 2000); // Adjusted enemy spawn rate
+    gameTimer = setTimeout(() => endGame(false), gameTimeLimit * 1000);
+    countdownTimer = setInterval(updateTimer, 1000);
+}
+
+function updateTimer() {
+    let currentTime = parseInt(timerDisplay.textContent.split(' ')[1]);
+    currentTime--;
+    timerDisplay.textContent = `Time: ${currentTime}`;
+    if (currentTime <= 0) {
+        clearInterval(countdownTimer);
+    }
 }
 
 function endGame(isWinner) {
     clearInterval(gameInterval);
     clearTimeout(gameTimer);
+    clearInterval(countdownTimer);
     const phoneNumber = phoneNumberInput.value.trim();
     if (isWinner) {
         alert('Congratulations! You receive a special gift from Dust Killer.');
@@ -171,7 +185,7 @@ function resetGame() {
     bullets.forEach((bullet) => gameArea.removeChild(bullet));
     level = 1;
     bulletLevel = 1;
-    enemySpeed = 2;
+    enemySpeed = 1;
 }
 
 function saveResult(phoneNumber, score) {
