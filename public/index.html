@@ -13,6 +13,35 @@
     <link rel="apple-touch-icon" sizes="152x152" href="images/logo/apple-touch-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="120x120" href="images/logo/apple-touch-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="76x76" href="images/logo/apple-touch-icon-76x76.png">
+    <style>
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+    
+        .cookie-consent button {
+            background-color: #FFD700;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        .cookie-consent button:hover {
+            background-color: #FFC107;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -134,6 +163,10 @@
     <a href="/reg.html" target="_blank" class="floating-button">
         <img src="images/reg.png" alt="Register">
     </a>
+    <div class="cookie-consent" id="cookieConsent">
+        <span>This website uses cookies to ensure you get the best experience on our website.</span>
+        <button id="acceptCookies">Accept</button>
+    </div>
     <script src="js/main.js"></script>
     <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/0.1.0-beta.2/libs/oversea/index.js"></script>
     <script>
@@ -146,6 +179,18 @@
                 icon: 'https://raw.githubusercontent.com/TDNM88/DK/main/public/images/icon.png',
                 layout: 'pc',
             },
+        });
+    </script>
+    <script>
+        document.getElementById('acceptCookies').addEventListener('click', function() {
+            document.getElementById('cookieConsent').style.display = 'none';
+            document.cookie = "cookies_accepted=true; max-age=" + 60*60*24*30 + "; path=/";
+        });
+
+        window.addEventListener('load', function() {
+            if (document.cookie.split(';').some((item) => item.trim().startsWith('cookies_accepted='))) {
+                document.getElementById('cookieConsent').style.display = 'none';
+            }
         });
     </script>
 </body>
