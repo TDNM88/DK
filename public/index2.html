@@ -3,9 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DUST KILLER</title>
+    <title>DUST KILLER - Premier Cleaning Services in Finland</title>
+    <meta name="description" content="Dust Killer is Finland's premier cleaning company, providing top-notch services to keep your spaces spotless. Trust our expert team for exceptional cleanliness and hygiene.">
+    <meta name="keywords" content="cleaning services, Dust Killer, Finland, professional cleaning, home cleaning, office cleaning">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/logo/favicon.png" type="image/x-icon">
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="images/logo/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/logo/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/logo/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/logo/apple-touch-icon-76x76.png">
+    <style>
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .cookie-consent button {
+            background-color: #FFD700;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cookie-consent button:hover {
+            background-color: #FFC107;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Dust Killer",
+      "description": "Premier cleaning services in Finland",
+      "url": "http://www.dustkiller.fi",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kirkkotie 15",
+        "addressLocality": "Kauniainan",
+        "postalCode": "02700",
+        "addressCountry": "FI"
+      },
+      "telephone": "+358403633493"
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -26,6 +81,7 @@
     </header>
     <main>
         <section class="hero fade-in-element">
+            <h1>Welcome to Dust Killer - Premier Cleaning Services in Finland</h1>
             <div class="hero-text">
                 At Dust Killer, we are dedicated to providing top-notch cleaning services for both homes and offices. Our mission is to create a clean, safe, and healthy environment for our clients. With years of experience and a commitment to excellence, our team of professionals is ready to tackle any cleaning challenge.
             </div>
@@ -88,23 +144,15 @@
                 <div class="payment-methods">
                     <i class="fab fa-cc-visa"></i>
                     <i class="fab fa-cc-mastercard"></i>
-                    <i class="fab fa-cc-paypal"></i>
                 </div>
             </div>
             <div class="footer-section fade-in-element">
-                <h3>Download the app</h3>
-                <div class="app-download">
-                    <i class="fab fa-google-play"></i>
-                    <i class="fab fa-apple"></i>
-                </div>
             </div>
             <div class="footer-section fade-in-element">
                 <h4>Dust Killer in social media</h4>
                 <div class="social-media">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/dustkiller.journey" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@dustkiller.info" target="_blank"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
         </div>
@@ -113,22 +161,32 @@
                 <h3>
                     <p>Dust Killer Finland</p>
                 </h3>
-                <p>Business ID: xxxxxx-x</p>
-            </div>
-            <div class="footer-links">
-                <h4></h4>
-                <p>Home · Window · Moving · Office</p>
-                <p>CLEANING</p>
-                </h4>
+                <p>Army Base</p> 
+                <p>Email: dustkiller24@gmail.com</p>
+                <p>Tel: 0403633493</p>
+                <p>Kirkkotie 15 - 02700, Kauniainan </p>
+                <p>Business ID: 3394088-3</p>
             </div>
             <div class="footer-legal">
-                <p>Whistleblowing · Terms and conditions · Privacy policy · Cookie preferences</p>
+                <p>
+                    <a href="/term-condition.html" target="_blank">Terms and conditions</a> · 
+                    <a href="/privacy.html" target="_blank">Privacy policy</a> · 
+                </p>
             </div>
         </div>
     </footer>
-    <a href="/reg.html" class="floating-button">
+    <div class="neon-text">
+        <span>Customer</span>
+        <span>Services</span>
+        <span>247</span>
+    </div>
+    <a href="/reg.html" target="_blank" class="floating-button">
         <img src="images/reg.png" alt="Register">
     </a>
+    <div class="cookie-consent" id="cookieConsent">
+        <span>This website uses cookies to ensure you get the best experience on our website.</span>
+        <button id="acceptCookies">Accept</button>
+    </div>
     <script src="js/main.js"></script>
     <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/0.1.0-beta.2/libs/oversea/index.js"></script>
     <script>
@@ -138,9 +196,21 @@
             },
             componentProps: {
                 title: 'DUST KILLER CUSTOMER CARE',
-                icon: 'https://lf16-alice-tos-sign.oceanapi-i18n.com/obj/ocean-cloud-tos-sg/FileBizType.BIZ_BOT_ICON/7334556397025330178_1718989003970850964_WH2SPFmHXp.png?lk3s=50ccb0c5&x-expires=1719076645&x-signature=nZz%2B40Hx8bfPYtucDdYwmmsmoqw%3D',
-                layout: 'mobile',
+                icon: 'https://raw.githubusercontent.com/TDNM88/DK/main/public/images/icon.png',
+                layout: 'pc',
             },
+        });
+    </script>
+    <script>
+        document.getElementById('acceptCookies').addEventListener('click', function() {
+            document.getElementById('cookieConsent').style.display = 'none';
+            document.cookie = "cookies_accepted=true; max-age=" + 60*60*24*30 + "; path=/";
+        });
+
+        window.addEventListener('load', function() {
+            if (document.cookie.split(';').some((item) => item.trim().startsWith('cookies_accepted='))) {
+                document.getElementById('cookieConsent').style.display = 'none';
+            }
         });
     </script>
 </body>
