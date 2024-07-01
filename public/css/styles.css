@@ -326,7 +326,7 @@ button:hover {
     font-family: 'Arial', sans-serif;
     font-weight: bold;
     color: #FFD700; /* Yellow color */
-    text-shadow: 0 0 5px #fff, 0 0 10px #00BFFF, 0 0 20px #00BFFF, 0 0 30px #00BFFF, 0 0 40px #00BFFF, 0 0 50px #00BFFF, 0 0 60px #00BFFF, 0 0 70px #00BFFF;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
     position: fixed;
     bottom: 50px; /* Adjust the position as needed */
     right: 20px;
@@ -336,5 +336,6 @@ button:hover {
 
 .neon-text span {
     display: block;
-    margin-bottom: 3px; /* Adjust this value to set the spacing between lines */
+    margin-bottom: 0px; /* Smallest line spacing */
 }
+
