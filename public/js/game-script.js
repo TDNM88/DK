@@ -14,6 +14,7 @@ let gameTimer;
 const gameTimeLimit = 60000; // 60 seconds
 
 document.addEventListener('keydown', handleKeyDown);
+startButton.addEventListener('click', startGame);
 gameArea.addEventListener('touchstart', handleTouchStart);
 gameArea.addEventListener('touchmove', handleTouchMove);
 gameArea.addEventListener('touchend', handleTouchEnd);
