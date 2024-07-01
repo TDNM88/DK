@@ -327,7 +327,7 @@ button:hover {
     color: #00BFFF; /* Finland blue color */
     text-shadow: 0 0 5px #fff, 0 0 10px #00BFFF, 0 0 20px #00BFFF, 0 0 30px #00BFFF, 0 0 40px #00BFFF, 0 0 50px #00BFFF, 0 0 60px #00BFFF, 0 0 70px #00BFFF;
     position: fixed;
-    bottom: 100px; /* Adjust the position as needed */
+    bottom: 50px; /* Adjust the position as needed */
     right: 20px;
     z-index: 1000;
     text-align: right;
@@ -335,4 +335,6 @@ button:hover {
 
 .neon-text span {
     display: block;
+    margin-bottom: 3px; /* Adjust this value to set the spacing between lines */
 }
+
