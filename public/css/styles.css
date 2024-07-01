@@ -320,3 +320,14 @@ button:hover {
             50% { filter: brightness(2); }
             100% { filter: brightness(1); }
         }
+
+.neon-text {
+    font-size: 2em;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+    position: fixed;
+    bottom: 80px; /* Adjust the position as needed */
+    right: 20px;
+    z-index: 1000;
+}
