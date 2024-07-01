@@ -1,21 +1,3 @@
-.neon-text {
-    font-size: 1em;
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    color: #FFD700; /* Yellow color */
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
-    position: fixed;
-    bottom: 50px; /* Adjust the position as needed */
-    right: 20px;
-    z-index: 1000;
-    text-align: right;
-}
-
-.neon-text span {
-    display: block;
-    margin-bottom: 3px; /* Smallest line spacing */
-}
-
 body {
     font-family: Arial, sans-serif;
     display: flex;
