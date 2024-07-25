@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="images/logo/favicon.png" type="image/x-icon">
-<!-- Apple Touch Icons -->
+    <!-- Apple Touch Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/logo/apple-touch-icon-180x180.png">
     <link rel="apple-touch-icon" sizes="167x167" href="images/logo/apple-touch-icon-167x167.png">
     <link rel="apple-touch-icon" sizes="152x152" href="images/logo/apple-touch-icon-152x152.png">
@@ -93,6 +93,20 @@
         (function(){
             emailjs.init("-KdUIEYlzAc2yVn6y");
         })();
+
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                emailjs.sendForm('service_fzrfnox', 'template_mevp4uf', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                        alert('Your form has been submitted successfully.');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        alert('Failed to send the form. Please try again later.');
+                    });
+            });
+        }
     </script>
 </head>
 <body>
